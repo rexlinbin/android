@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+   
+       >
+
+        <ImageView
+            android:id="@+id/found_item_image"
+            android:layout_width="fill_parent"
+            android:layout_height="101dp"
+            android:background="@drawable/default720380"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+             
+            android:background="@drawable/img_float" />
+
+        <TextView
+            android:id="@+id/found_item_item"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+     
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:textColor="#fff"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/found_item_long"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="5dp"
+            android:paddingBottom="3dp"
+            android:gravity="right"
+            android:textColor="#fff"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/found_item_title"
+        style="@style/titleText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="left"
+            android:layout_marginTop="9dp"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/found_item_context"
+        style="@style/desText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+             android:layout_marginTop="4dp"
+        android:layout_marginRight="10dp"
+        android:gravity="left"
+        android:singleLine="true" />
+
+    <RelativeLayout
+        android:id="@+id/found_item_moreRe"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/found_item_moreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/more"
+            android:gravity="center_horizontal"
+            android:text="dsfdsfsfdsfds"
+            android:textColor="#7ac057"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</LinearLayout>

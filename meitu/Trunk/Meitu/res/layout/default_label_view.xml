@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+        <TextView
+	        android:clickable="true"
+	        android:id="@+id/labe_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="#555555"
+	        android:visibility="visible"
+	        android:background="@drawable/lable_click_selector"
+	        android:textSize="15sp" />
+        
+        <ImageView 
+            android:id="@+id/iv_switch"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/labe_text"
+            android:background="@drawable/lable_switch_selector"/>
+        
+</RelativeLayout>

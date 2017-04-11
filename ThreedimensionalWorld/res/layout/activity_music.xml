@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bandstand_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:id="@+id/music_relative1"
+                android:layout_width="375dp"
+                android:layout_height="300dp"
+                android:layout_centerInParent="true"
+                android:background="@color/white" >
+
+                <ImageView
+                    android:id="@+id/music_image"
+                    android:layout_width="150dp"
+                    android:layout_height="300dp"
+                    android:background="@drawable/music_defalt"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/music_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-60dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@id/music_image"
+                    android:singleLine="true"
+                    android:textColor="#333"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/music_author"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/music_name"
+                    android:layout_marginLeft="-60dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_toRightOf="@id/music_image"
+                    android:textColor="#999"
+                    android:textSize="18sp" />
+
+                <SeekBar
+                    android:id="@+id/music_seek"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="225dp"
+                    android:layout_height="6dp"
+                    android:layout_below="@id/music_author"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_toRightOf="@id/music_image"
+                    android:progressDrawable="@drawable/progress_bar_states"
+                    android:thumb="@null" />
+
+                <TextView
+                    android:id="@+id/music_Alltime"
+                   android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/music_seek"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                  android:layout_marginRight="15dp"
+                    android:textColor="#b3b3bf"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/music_gang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/music_seek"
+                    android:layout_marginTop="20dp"
+                    android:layout_toLeftOf="@id/music_Alltime"
+                    android:gravity="center_horizontal"
+                    android:text="/"
+                    android:textColor="#b3b3bf"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/music_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/music_seek"
+         
+                    android:layout_marginTop="20dp"
+                    android:layout_toLeftOf="@id/music_gang"
+                    android:gravity="center_horizontal"
+                
+                    android:textColor="#b3b3bf"
+                    android:textSize="24sp" />
+
+                <RelativeLayout
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/music_time"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@id/music_image" >
+
+                    <Button
+                        android:id="@+id/music_next"
+                        android:layout_width="25dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="18dp"
+                        android:background="@drawable/music_nextbtnselect"
+                        android:onClick="onNextClick" />
+
+                    <Button
+                        android:id="@+id/music_pause"
+                        android:layout_width="25dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_toLeftOf="@+id/music_next"
+                        android:background="@drawable/music_pausebtnselect"
+                        android:onClick="onPauseClick" />
+
+                    <Button
+                        android:id="@+id/music_pre"
+                        android:layout_width="25dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_toLeftOf="@+id/music_pause"
+                        android:background="@drawable/music_prebtnselect"
+                        android:onClick="onPreClick" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/left_loading_imageView"
+                    android:layout_width="47dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/videoplayer_loading"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/bandstand_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:id="@+id/music_relative"
+                android:layout_width="375dp"
+                android:layout_height="300dp"
+                android:layout_centerInParent="true"
+                android:background="@color/white" >
+
+                <ImageView
+                    android:id="@+id/music_image1"
+                    android:layout_width="150dp"
+                    android:layout_height="300dp"
+                    android:background="@drawable/music_defalt"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/music_name1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-60dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_toRightOf="@id/music_image1"
+                    android:singleLine="true"
+                    android:textColor="#333"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/music_author1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/music_name1"
+                    android:layout_marginLeft="-60dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_toRightOf="@id/music_image1"
+                    android:textColor="#999"
+                    android:textSize="18sp" />
+
+                <SeekBar
+                    android:id="@+id/music_seek1"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="225dp"
+                   android:layout_height="6dp"
+                    android:layout_below="@id/music_author1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_toRightOf="@id/music_image1"
+                    android:progressDrawable="@drawable/progress_bar_states"
+                    android:thumb="@null" />
+
+                <TextView
+                    android:id="@+id/music_Alltime1"
+                   android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/music_seek1"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal"
+                         android:layout_marginRight="15dp"
+                    android:textColor="#b3b3bf"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/music_gang1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/music_seek1"
+                    android:layout_marginTop="20dp"
+                    android:layout_toLeftOf="@id/music_Alltime1"
+                    android:text="/"
+                    android:textColor="#b3b3bf"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/music_time1"
+                  android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/music_seek1"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toLeftOf="@id/music_gang1"
+                    android:gravity="center_horizontal"
+                  
+                    android:textColor="#b3b3bf"
+                    android:textSize="24sp" />
+
+                <RelativeLayout
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/music_time1"
+                   android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@id/music_image1" >
+
+                    <Button
+                        android:id="@+id/music_next1"
+                        android:layout_width="25dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="18dp"
+                        android:background="@drawable/music_nextbtnselect"
+                        android:onClick="onNextClick" />
+
+                    <Button
+                        android:id="@+id/music_pause1"
+                        android:layout_width="25dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_toLeftOf="@+id/music_next1"
+                        android:background="@drawable/music_pausebtnselect"
+                        android:onClick="onPauseClick" />
+
+                    <Button
+                        android:id="@+id/music_pre1"
+                        android:layout_width="25dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_toLeftOf="@+id/music_pause1"
+                        android:background="@drawable/music_prebtnselect"
+                        android:onClick="onPreClick" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/right_loading_imageView"
+                    android:layout_width="47dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/videoplayer_loading"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+package com.bccv.zhuiying.api;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.json.JSONObject;
+
+import com.alibaba.fastjson.JSON;
+import com.bccv.zhuiying.model.Special;
+import com.utils.net.HttpClientUtil;
+import com.utils.tools.StringUtils;
+
+public class SpecialApi extends AppApi{
+
+	
+	
+	
+	
+	public List<Special> getThemList() {
+
+		HttpClientUtil util = new HttpClientUtil();
+
+		Map<String, String> params = new HashMap<String, String>();
+
+		String result = util.sendGet(Url.Theme_list, params);
+
+		if (!StringUtils.isEmpty(result)) {
+
+			try {
+				JSONObject jsonObject = new JSONObject(result);
+
+				if (checkResponse(jsonObject)) {
+					String rtnStr = jsonObject.getString("data");
+
+					if (!StringUtils.isEmpty(rtnStr) && !rtnStr.equals("null")) {
+						List<Special> list = null;
+						list = JSON.parseArray(rtnStr, Special.class);
+						return list;
+					}
+
+				}
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+
+		}
+
+		return null;
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

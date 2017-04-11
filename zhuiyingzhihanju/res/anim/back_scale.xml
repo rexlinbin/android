@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_interpolator" >
+
+    <scale
+        android:duration="1000"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="0.0"
+        android:toYScale="1.0" />
+    <!--
+fromXScale 起始时x坐标的尺寸，设置为1.0说明是整个图片x轴的长度 
+toXScale   结束时x坐标的尺寸，设置为0.0说明整个图片x轴完全收缩到无 
+fromYScale 起始时y坐标的尺寸，设置为1.0说明是整个图片y轴的长度 
+toYScale   结束时y坐标的尺寸，设置为1.0说明是在收缩时y轴的长度保持不变 
+    -->
+    
+
+</set>

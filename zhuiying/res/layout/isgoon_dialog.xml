@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="200dp"
+    android:background="@drawable/shape_dialog_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_title_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提示"
+            android:textColor="#00bdb1"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:text="您现在使用的是数据网络，是否继续播放？"
+        android:textColor="#999999"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:id="@+id/dialog_ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/dialog_cancle"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/comm_dialog_button_selector"
+            android:gravity="center"
+            android:text="@string/update_cancel"
+            android:textColor="@drawable/comm_dialog_button_text_selector"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/dialog_enter"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/comm_dialog_button_selector"
+            android:gravity="center"
+            android:text="@string/iswifi_bofang"
+            android:textColor="@drawable/comm_dialog_button_text_selector"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

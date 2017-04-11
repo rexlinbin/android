@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/reg_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/log_preback_selector" />
+
+    <EditText
+        android:id="@+id/reg_name"
+        android:layout_width="fill_parent"
+        android:layout_height="36dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/login_line"
+        android:hint="昵称(3~6个字符)"
+        android:paddingLeft="10dp"
+
+        android:textColorHint="#bdbdbd"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/reg_passWord"
+        android:layout_width="fill_parent"
+        android:layout_height="36dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/login_line"
+        android:hint="请输入密码（6~13个字符）"
+        android:paddingLeft="10dp"
+       android:password="true"
+        android:textColorHint="#bdbdbd"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/reg_aginPassWord"
+        android:layout_width="fill_parent"
+        android:layout_height="36dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/login_line"
+        android:hint="再次输入密码（6~13个字符）"
+        android:paddingLeft="10dp"
+          android:password="true"
+        android:textColorHint="#bdbdbd"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+      
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp" >
+
+        <Button
+              android:id="@+id/reg_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/login_bg"
+            android:text="注册"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp" >
+
+        <ImageView
+            android:id="@+id/reg_check"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="8dp"
+           />
+
+        <TextView
+            android:id="@+id/reg_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+      
+            android:layout_toRightOf="@id/reg_check"
+            android:text="注册表示您已经同意《盒子漫画》使用条款"
+            android:textColor="#999"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</LinearLayout>

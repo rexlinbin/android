@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="90dp" >
+
+        <ImageView
+            android:id="@+id/main_list_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/main_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/main_list_image"
+            android:textColor="#ccc"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/main_list_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@id/main_list_title"
+            android:background="@drawable/score_frame"
+            android:focusable="false"
+            android:textColor="#ffb400"
+            android:gravity="center"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/main_list_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_list_title"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/main_list_image"
+            android:textColor="#33ffffff"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/main_list_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_list_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@id/main_list_image"
+            android:background="@drawable/index_download" />
+
+        <TextView
+            android:id="@+id/main_list_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_list_content"
+            android:layout_marginRight="20dp"
+         
+            android:layout_toRightOf="@id/main_list_icon"
+            android:textColor="#33ffffff"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/main_list_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/main_list_content"
+        
+            android:layout_toRightOf="@id/main_list_num"
+            android:textColor="#33ffffff"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/main_list_image"
+            android:background="#33ffffff" />
+
+         <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                          android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+                       android:layout_alignParentRight="true" >
+
+                        <ProgressBar
+                            android:id="@+id/progressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="60dp"
+                            android:layout_height="27dp"
+                            android:progress="100"
+                            android:progressDrawable="@drawable/progressbar_download"
+                            android:layout_centerInParent="true"
+                            android:max="100"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/download_textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="已下载100%"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/frame"
+                            android:textSize="10sp"
+                            android:textColor="#fff" />
+
+                    </RelativeLayout>
+        
+        
+        
+    </RelativeLayout>
+
+</LinearLayout>

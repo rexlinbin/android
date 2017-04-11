@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f5f5f5"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp" >
+
+        <TextView
+            android:id="@+id/order_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="10dp"
+            android:text="排序"
+            android:textColor="#9c9c9c"
+            android:textSize="13sp" />
+
+        <com.utils.views.HorizontalListView
+            android:id="@+id/order_gridView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:scrollbars="none" >
+        </com.utils.views.HorizontalListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/isFinish_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/isFinish_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="10dp"
+            android:text="状态"
+            android:textColor="#9c9c9c"
+            android:textSize="13sp" />
+
+        <com.utils.views.HorizontalListView
+            android:id="@+id/isFinish_gridView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:scrollbars="none"  >
+        </com.utils.views.HorizontalListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/type_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="10dp"
+            android:text="类型"
+            android:textColor="#9c9c9c"
+            android:textSize="13sp" />
+
+        <com.utils.views.HorizontalListView
+            android:id="@+id/type_gridView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:scrollbars="none"  >
+        </com.utils.views.HorizontalListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            android:id="@+id/years_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="10dp"
+            android:text="年份"
+            android:textColor="#9c9c9c"
+            android:textSize="13sp" />
+
+        <com.utils.views.HorizontalListView
+            android:id="@+id/years_gridView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:scrollbars="none" >
+        </com.utils.views.HorizontalListView>
+    </LinearLayout>
+
+</LinearLayout>

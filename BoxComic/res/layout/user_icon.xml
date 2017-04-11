@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#bb000000" >
+
+    <TextView 
+        android:id="@+id/quit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:padding="15dp"
+        android:background="#ffffff"
+        android:text="取消"
+        android:gravity="center"
+        android:textColor="#007aff"/>
+    <TextView 
+        android:id="@+id/photo_album"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_above="@id/quit"
+        android:background="#ffffff"
+        android:text="从相册选图片"
+        android:gravity="center"
+        android:textColor="#007aff"/>
+    <TextView 
+        android:id="@+id/photo_camera"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:layout_marginBottom="1dp"
+        android:layout_above="@id/photo_album"
+        android:background="#ffffff"
+        android:text="拍一张照片"
+        android:gravity="center"
+        android:textColor="#007aff"/>
+</RelativeLayout>

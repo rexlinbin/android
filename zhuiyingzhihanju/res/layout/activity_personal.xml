@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+         android:background="#fff"
+        layout="@layout/title" />
+
+    <RelativeLayout
+        android:id="@+id/rl_clear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/setting_item_selector" >
+
+        <TextView
+            style="@style/MySet"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="修改头像" />
+
+        <ImageView
+            android:id="@+id/clear_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/right" />
+
+        <com.utils.views.CircleImageView
+            android:id="@+id/per_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/clear_tag"
+            android:background="@drawable/head_default"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/setting_item_selector" >
+
+        <TextView
+            style="@style/MySet"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20sp"
+            android:paddingRight="20dp"
+            android:text="昵称" />
+
+        
+         
+        <TextView
+            android:id="@+id/per_NameText"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="#bbb"
+            android:textSize="12sp" />
+        
+        <EditText
+            android:id="@+id/per_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:text=""
+            android:visibility="invisible"
+            android:textColor="#000"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#eee" />
+
+    <RelativeLayout
+        android:id="@+id/rl_sex"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/setting_item_selector" >
+
+        <TextView
+            style="@style/MySet"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20sp"
+            android:paddingRight="20dp"
+            android:text="性别" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/rl_nan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:button="@null"
+                android:checked="true"
+                android:drawableLeft="@drawable/radio_btnselect"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:text="男"
+                android:textColor="#bbb"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/rl_nv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:button="@null"
+                android:drawableLeft="@drawable/radio_btnselect"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:text="女"
+                android:textColor="#bbb"
+                android:textSize="12sp" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#eee" />
+
+    <RelativeLayout
+        android:id="@+id/rl_QM"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/setting_item_selector" >
+
+        <TextView
+            android:id="@+id/QmTEX"
+            style="@style/MySet"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20sp"
+            android:paddingRight="20dp"
+            android:text="签名" />
+ <TextView
+            android:id="@+id/QM_Text"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@id/QmTEX"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="#bbb"
+            android:textSize="12sp" />
+        <EditText
+            android:id="@+id/QM_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@id/QmTEX"
+            android:gravity="center_vertical"
+            android:text=""
+             android:textColor="#000"
+            android:visibility="invisible"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.bccv.bangyangapp.ui.view.BackGroundView
+        android:id="@+id/background_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/reply_2_person_title"
+        layout="@layout/common_second_title" />
+
+    <RelativeLayout
+        android:id="@+id/import_rl"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/send_btn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/send_btn_selector"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/reply_edit_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/send_btn"
+            android:background="@drawable/search_bg"
+            android:hint="@string/default_input"
+            android:singleLine="true"
+            android:textColor="#999999"
+            android:textColorHint="#999999"
+            android:textCursorDrawable="@null"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/reply_2_person_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reply_2_person_title"
+        android:background="@android:color/white"
+        android:paddingBottom="15dp" >
+
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/head_default"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/question_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/user_icon"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@id/user_icon"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#666666"
+            android:maxLines="4"
+            android:ellipsize="end"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <com.bccv.bangyangapp.ui.view.XListView
+        android:id="@+id/xlistview_include"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/reply_2_person_question"
+        android:background="@drawable/text_bg"
+        android:layout_above="@id/import_rl"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:drawSelectorOnTop="true"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"
+        android:smoothScrollbar="true" />
+
+    <include
+        android:id="@+id/reply_2_person_error"
+        android:layout_below="@id/reply_2_person_question"
+        layout="@layout/common_error"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/reply_2_person_loading"
+        android:layout_below="@id/reply_2_person_question"
+        layout="@layout/common_loading"
+        android:visibility="gone" />
+
+</RelativeLayout>

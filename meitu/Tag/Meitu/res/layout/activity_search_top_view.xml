@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="48dp"
+    android:background="#333333" >
+
+    <LinearLayout 
+		android:id="@+id/left_buton"
+        android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:layout_centerVertical="true"
+	   	android:layout_alignParentLeft="true"
+	   	android:gravity="center"
+	   	android:paddingLeft="15dp"
+	   	android:paddingRight="15dp">
+		<ImageButton
+		    android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content" 
+	    	android:background="@drawable/title_back_button_selector"
+	    	android:duplicateParentState="true"/>
+        </LinearLayout>
+	
+	<TextView 
+	    android:id="@+id/title_text"
+	  	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+	    android:layout_centerInParent="true"
+	    android:textSize="20sp"
+	    android:textColor="#ffffff"
+	    android:text="搜索title"/>
+	
+
+</RelativeLayout>

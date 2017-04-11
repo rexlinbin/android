@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <LinearLayout
+        android:id="@+id/user_mid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="14" >
+
+        
+        <LinearLayout
+            android:id="@+id/title_left"
+        	android:layout_height="wrap_content"
+        	android:layout_width="0dp"
+        	android:orientation="vertical"
+        	android:layout_weight="5"
+        	android:gravity="center_horizontal" >
+        	
+		       <TextView
+		           android:id="@+id/tv_user_score"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:text="325"
+		           android:textColor="#ff4e00"
+		           android:textSize="18sp" />
+		           
+		       <View 
+		           android:layout_width="40dp"
+		           android:layout_height="0.5dp" 
+		           android:background="#eeeeee"
+		           android:layout_marginTop="3dp"
+		           android:layout_marginBottom="3dp"/>
+		       	
+		       <TextView
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:text="积分"
+		           android:textColor="#666666"
+		           android:textSize="12sp" />
+       
+        </LinearLayout>
+            
+        
+       	 <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginTop="5dp"
+            android:text="诺伊Stander"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="15sp"
+            android:gravity="center_horizontal"
+            android:layout_weight="4" />
+        
+        
+         <LinearLayout
+             android:id="@+id/title_right"
+        	android:layout_height="wrap_content"
+		    android:layout_width="0dp"
+        	android:orientation="vertical"
+        	android:layout_weight="5"
+        	android:gravity="center_horizontal">
+        	
+		       <TextView
+		           android:id="@+id/tv_user_money"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:text="545"
+		           android:textColor="#ff4e00"
+		           android:textSize="20sp" />
+		           
+		       <View 
+		           android:layout_width="40dp"
+		           android:layout_height="0.5dp" 
+		           android:background="#eeeeee"
+		           android:layout_marginTop="3dp"
+		           android:layout_marginBottom="3dp"/>
+		       	
+		       <TextView
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:text="金币"
+		           android:textColor="#666666"
+		           android:textSize="12sp" />
+       
+        </LinearLayout>
+        
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/user_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/user_mid"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+         
+        <View
+            android:id="@+id/line_one"
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="#eeeeee" />
+        
+        <RelativeLayout 
+            android:id="@+id/ll_chat"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal">
+	        <TextView
+	            android:id="@+id/chat_list"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+            	android:background="@drawable/user_click_selector"
+	            android:paddingTop="17dp"
+	            android:paddingBottom="17dp"
+	            android:paddingLeft="20dp"
+	            android:textColor="#333333"
+	            android:text="会话列表"
+	            android:textSize="15sp" />
+	        <ImageView 
+	            android:id="@+id/chat_num"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="90dp"
+	            android:visibility="gone"
+	            android:layout_marginTop="17dp"
+	            android:background="@drawable/message_remind"/>
+        </RelativeLayout>
+        
+        <!-- <TextView
+            android:id="@+id/chat_list"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/user_click_selector"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:text="会话列表"     
+            android:textSize="15sp" /> -->
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee" />
+        
+        <TextView
+            android:id="@+id/upload_pic"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/user_click_selector"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:text="我要上传"     
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee" />
+        
+        <TextView
+            android:id="@+id/get_score"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/user_click_selector"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:text="任务说明"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="#eeeeee" />
+        
+        <TextView
+            android:id="@+id/my_album"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/user_click_selector"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:text="我的专辑"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee" />
+
+        <TextView
+            android:id="@+id/my_attention"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/user_click_selector"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:text="我的关注"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee" />
+
+        <TextView
+            android:id="@+id/my_exclusive"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/user_click_selector"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:text="我的专属"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee" />
+
+        <TextView
+            android:id="@+id/my_favorite"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/user_click_selector"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:text="我的喜欢"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="#eeeeee" />
+
+        <RelativeLayout
+            android:id="@+id/ll_cache"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp" >
+
+            <TextView
+                android:id="@+id/clear_cache"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+	            android:background="@drawable/user_click_selector"
+                android:paddingTop="17dp"
+	            android:paddingBottom="17dp"
+	            android:paddingLeft="20dp"
+	            android:textColor="#333333"
+                android:text="清除缓存"
+                android:textSize="15sp" />
+            
+            <TextView
+                android:id="@+id/cache_num"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="17dp"
+	            android:paddingBottom="17dp"
+	            android:paddingRight="20dp"
+	            android:textColor="#bbbbbb"
+                android:textSize="15sp" />
+        </RelativeLayout>
+        
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="#eeeeee" />
+        
+         <TextView
+            android:id="@+id/more_platform"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/user_click_selector"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:text="绑定平台"
+            android:textSize="15sp" />
+        
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee" />
+        
+        <RelativeLayout 
+            android:id="@+id/ll_check_version"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal">
+	        <TextView
+	            android:id="@+id/check_version"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+            	android:background="@drawable/user_click_selector"
+	            android:paddingTop="17dp"
+	            android:paddingBottom="17dp"
+	            android:paddingLeft="20dp"
+	            android:textColor="#333333"
+	            android:text="检查更新"
+	            android:textSize="15sp" />
+	        <ImageView 
+	            android:id="@+id/iv_check_version"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="90dp"
+	            android:visibility="gone"
+	            android:layout_marginTop="17dp"
+	            android:background="@drawable/gengxin"/>
+        </RelativeLayout>
+        
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee" />
+        
+        <TextView
+            android:id="@+id/comment_score"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/user_click_selector"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:text="我要评分"
+            android:textSize="15sp" />
+        
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="#eeeeee" />
+        
+        <TextView
+            android:id="@+id/user_exit"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/user_click_selector"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:paddingLeft="20dp"
+            android:textColor="#333333"
+            android:text="退出"
+            android:textSize="15sp" />
+        
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="#eeeeee" />
+    </LinearLayout>
+
+</RelativeLayout>

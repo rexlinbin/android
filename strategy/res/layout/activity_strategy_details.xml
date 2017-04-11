@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.bccv.strategy.ui.view.BackGroundView
+        android:id="@+id/background_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- 标题 -->
+
+    <include
+        android:id="@+id/strategy_details_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        layout="@layout/common_banner" />
+
+    <ScrollView
+        android:id="@+id/strategy_details_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/strategy_details_title"
+        android:background="@android:color/white" >
+
+        <LinearLayout
+            android:id="@+id/strategy_details_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/strategy_details_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/common_app_intro" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/comment_rl"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp" >
+
+        <ImageView
+            android:id="@+id/comment_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp" 
+            android:src="@drawable/comment_btn_selector"
+            android:layout_alignParentBottom="true"
+            android:contentDescription="@null"/>
+        
+        <TextView 
+            android:id="@+id/comment_num"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:singleLine="true"
+            android:text="0"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:background="@drawable/comment_num"
+            android:textColor="@android:color/white"
+            android:layout_alignParentRight="true"/>
+        
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/strategy_details_loading"
+        android:layout_below="@id/strategy_details_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/common_loading" 
+        android:visibility="gone"/>
+    
+    <View
+        android:id="@+id/bg_gray"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#4d000000"
+        android:visibility="gone" />
+    
+</RelativeLayout>

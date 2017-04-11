@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.bccv.zhuiyingzhihanju"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="178dp"
+            android:layout_height="101dp" >
+
+            <com.utils.views.RoundedImageView
+                android:id="@+id/roundedImageView"
+                android:layout_width="178dp"
+                android:layout_height="101dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/default720380"
+                app:corner_radius="0dp" />
+
+            <TextView
+                android:id="@+id/score_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#ff9600"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="8dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="#191919"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/intro_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="#999"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

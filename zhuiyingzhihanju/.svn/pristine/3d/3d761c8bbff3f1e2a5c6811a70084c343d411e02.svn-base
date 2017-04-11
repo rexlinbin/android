@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#f1f0f3"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp" >
+
+        <ImageView
+            android:id="@+id/item_recommend_image"
+            android:layout_width="360dp"
+            android:layout_height="190dp"
+            android:background="@drawable/default_680"
+            android:scaleType="fitXY" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="102dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/banner_float" />
+
+        <TextView
+            android:id="@+id/item_recommend_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="10dp"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#fff" >
+
+        <TextView
+            android:id="@+id/item_recommend_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/num_bg"
+            android:textColor="#555"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/item_recommend_bonum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/item_recommend_num"
+            android:background="@drawable/num_bg"
+            android:gravity="center"
+          
+            android:textColor="#555"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/item_recommend_up"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:drawableLeft="@drawable/zt_list_up"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="UP"
+            android:textColor="@color/green"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</LinearLayout>

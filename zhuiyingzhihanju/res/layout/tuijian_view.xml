@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/his_view2"
+    android:orientation="vertical" >
+<ScrollView 
+     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    >
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+    
+    <TextView
+        android:id="@+id/hot_null_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="暂无历史记录"
+        android:textColor="#9c9c9c"
+        
+        android:textSize="15sp" />
+    
+    
+    
+    <TextView
+        android:id="@+id/hot_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="热门推荐"
+        android:textColor="#9c9c9c"
+        android:textSize="15sp" />
+
+    <com.utils.views.MyListView
+        android:id="@+id/hot_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:scrollbars="none" >
+    </com.utils.views.MyListView>
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

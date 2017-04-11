@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#333</color>
+    <color name="darkgray">#292b31</color>
+    <color name="gray">#999999</color>
+    <color name="blue">#0080fc</color>
+    <color name="lightblue">#800080fc</color>
+    <color name="white">#ffffff</color>
+    <color name="graywhite">#f9f9f9</color>
+    <color name="halfWhite">#8fffffff</color>
+    <color name="orange">#e08e6d</color>
+    <color name="backGray">#eeeeee</color>
+    <color name="lightgray">#bbbbbb</color>
+    <color name="halflightgray">#6fbbbbbb</color>
+    <color name="linegray">#d6d6d6</color>
+    <color name="textblack">#555555</color>
+    <color name="presscolor">#e08e6d</color>
+    <color name="listSelect">#dbdbdb</color>
+      <color name="weixin_bt_pressed_color">#282a2b</color>
+    <color name="weixin_bt_unpress_color">#303537</color>
+    <color name="catalogue_pressed">#dbdbdb</color>
+    <color name="catalogue_normal">#ffffff</color>
+    <color name="catalogue_text_cur">#11907a</color>
+    <color name="catalogue_text_normal">#555555</color>
+    <color name="catalogue_text_readed">#999999</color>
+        <color name="local_press">#e6e6e6</color>
+</resources>

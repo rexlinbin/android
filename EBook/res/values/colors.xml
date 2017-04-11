@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="catalogue_pressed">#dbdbdb</color>
+    <color name="catalogue_normal">#ffffff</color>
+    <color name="catalogue_text_cur">#11907a</color>
+    <color name="catalogue_text_normal">#555555</color>
+    <color name="catalogue_text_readed">#999999</color>
+    <color name="dialog_bg_clicked">#eeeeee</color>
+    <color name="dialog_bg_unclick">#ffffff</color>
+
+</resources>

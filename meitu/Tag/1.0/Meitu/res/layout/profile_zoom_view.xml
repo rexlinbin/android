@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/iv_zoom"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:background="@drawable/user_bg"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/pro_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/pro_back_button_selector" />
+
+    <ImageView
+        android:id="@+id/pro_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="235dp"
+        android:background="@drawable/home_headpic_9"
+        android:padding="2dp"
+        android:src="@drawable/default_head" />
+
+    <TextView
+        android:id="@+id/tv_pro_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pro_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="诺伊Stander"
+        android:textColor="#555555"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/pro_guanzhu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_pro_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/per_guanzhu" />
+
+</RelativeLayout>

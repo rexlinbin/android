@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dp" >
+
+        <ImageView
+            android:id="@+id/msg_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/notice" >
+        </ImageView>
+
+        <RelativeLayout
+            android:id="@+id/msg_re"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17dp"
+            android:layout_toRightOf="@id/msg_image" >
+
+            <TextView
+                android:id="@+id/msg_name"
+                style="@style/MyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="系统消息" />
+
+            <ImageView
+                android:id="@+id/msg_dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/msg_name"
+                android:background="@drawable/red_dot"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/msg_sign"
+                style="@style/MySign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/msg_name"
+                android:layout_centerVertical="true"
+                android:text="据说，登陆后看片更流畅" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/msg_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="#bbb"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</LinearLayout>

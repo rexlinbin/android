@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#eeeeee" >
+    
+    <RelativeLayout 
+	   android:id="@+id/menu_title"
+	   android:layout_width="fill_parent"
+	   android:layout_height="48dp"
+	   android:background="#000000" >
+
+	     <LinearLayout 
+			android:id="@+id/left_buton"
+	        android:layout_width="wrap_content"
+		    android:layout_height="fill_parent"
+		    android:layout_centerVertical="true"
+		   	android:layout_alignParentLeft="true"
+		   	android:gravity="center_vertical"
+		    android:paddingLeft="15dp"
+		    android:paddingRight="30dp">
+			<ImageView
+			    android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content" 
+		    	android:background="@drawable/title_back_button_selector"
+		    	android:duplicateParentState="true"/>
+	        </LinearLayout>
+		
+			<TextView 
+			    android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content" 
+		    	android:layout_centerInParent="true"
+		    	android:textSize="18sp"
+		    	android:textColor="#ffffff"
+		    	android:text="绑定平台"/>
+
+	 </RelativeLayout>
+	   
+    <LinearLayout 
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:orientation="vertical"
+    	android:layout_below="@id/menu_title">    
+ 
+       <RelativeLayout 
+            android:id="@+id/ll_QQ_bind"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/user_icon_text_bg"
+            android:orientation="horizontal">
+
+	        <TextView
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingLeft="5dp"
+	            android:layout_centerVertical="true"
+	            android:gravity="center_vertical"
+	            android:drawableLeft="@drawable/bd_qq"
+	            android:textColor="#333333"
+	            android:text="  QQ"
+	            android:textSize="16sp" />
+
+            <com.bccv.meitu.view.BindButton
+                  android:id="@+id/bind_QQ_check_box"
+                  android:layout_width="68dp"
+                  android:layout_height="24dp"
+                  android:layout_alignParentRight="true"
+                  android:layout_centerVertical="true"
+                  android:background="@drawable/my_infro_btn_bound_un" />
+        </RelativeLayout>
+       <RelativeLayout 
+            android:id="@+id/ll_weixin_bind"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="1dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/user_icon_text_bg"
+            android:orientation="horizontal">
+
+	        <TextView
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingLeft="5dp"
+	            android:layout_centerVertical="true"
+	            android:gravity="center_vertical"
+	            android:drawableLeft="@drawable/bd_weixin"
+	            android:textColor="#333333"
+	            android:text="  微信"
+	            android:textSize="16sp" />
+
+            <com.bccv.meitu.view.BindButton
+                  android:id="@+id/bind_weixin_check_box"
+                  android:layout_width="68dp"
+                  android:layout_height="24dp"
+                  android:layout_alignParentRight="true"
+                  android:layout_centerVertical="true"
+                  android:background="@drawable/my_infro_btn_bound_un" />
+        </RelativeLayout>
+       <RelativeLayout 
+            android:id="@+id/ll_sina_bind"
+            android:layout_width="fill_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/user_icon_text_bg"
+            android:orientation="horizontal">
+
+	        <TextView
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingLeft="5dp"
+	            android:layout_centerVertical="true"
+	            android:gravity="center_vertical"
+	            android:drawableLeft="@drawable/bd_sina"
+	            android:textColor="#333333"
+	            android:text="  新浪微博"
+	            android:textSize="16sp" />
+
+            <com.bccv.meitu.view.BindButton
+                  android:id="@+id/bind_sina_check_box"
+                  android:layout_width="68dp"
+                  android:layout_height="24dp"
+                  android:layout_alignParentRight="true"
+                  android:layout_centerVertical="true"
+                  android:background="@drawable/my_infro_btn_bound_un" />
+	        
+        </RelativeLayout>
+	 
+     </LinearLayout>
+       
+	 <include 
+        layout="@layout/common_waiting"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/menu_title"/>
+       
+</RelativeLayout>

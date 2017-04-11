@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/leftbg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100dp" >
+
+            <TextView
+                android:id="@+id/option_setscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="开启WLAN"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/wifi_close"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/set_close"
+                android:onClick="onClick"
+                android:textOff=""
+                android:textOn="" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/wifi_listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="#50ffffff"
+            android:dividerHeight="0.5dp"
+            android:scrollbars="none" >
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/leftbg"
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100dp" >
+
+            <TextView
+                android:id="@+id/option_setscreen1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="开启WLAN"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/wifi_close1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/set_close"
+                android:onClick="onClick"
+                android:textOff=""
+                android:textOn="" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/wifi_listView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:divider="#50ffffff"
+            android:dividerHeight="0.5dp"
+            android:scrollbars="none" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

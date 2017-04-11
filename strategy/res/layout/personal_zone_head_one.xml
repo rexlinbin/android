@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/zone_head_one_rl"
+    android:paddingTop="17dp"
+    android:paddingBottom="17dp"
+    android:background="#1affffff"
+    android:layout_height="100dp" >
+    
+	<ImageView 
+	    android:id="@+id/zone_head_one_icon"
+	    android:layout_width="65dp"
+	    android:layout_height="65dp"
+	    android:layout_centerVertical="true"
+	    android:layout_marginLeft="20dp"
+	    android:background="@drawable/usericon_background"
+	    android:src="@drawable/head_default"/>
+	
+	<LinearLayout 
+	    android:id="@+id/zone_head_one_ll"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerVertical="true"
+	    android:layout_toRightOf="@id/zone_head_one_icon"
+	    android:layout_marginLeft="10dp"
+	    android:orientation="vertical">
+	    
+	    <TextView 
+	        android:id="@+id/zone_head_one_tv_name"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18sp"
+	        android:textColor="#ffffff"
+	        android:text="@string/default_nick"/>
+	    
+	    <TextView 
+	        android:id="@+id/zone_head_one_tv_sign"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="13sp"
+	        android:textColor="#80ffffff"
+	        android:text="@string/default_sign"
+	        android:layout_marginTop="7dp"/>
+	</LinearLayout>
+	
+	<ImageView 
+	    android:id="@+id/zone_head_one_iv_arrow"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/right"
+	    android:layout_alignParentRight="true"
+	    android:layout_marginRight="15dp"
+	    android:layout_centerVertical="true"/>
+	
+</RelativeLayout>

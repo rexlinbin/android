@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/blue_re"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@color/burlywood" >
+
+            <TextView
+                android:id="@+id/blue_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="已配对设备"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/blue_re3"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+          >
+
+            <TextView
+                android:id="@+id/boule_nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="重命名"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/blue_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:textColor="#bbb"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/blue_Editname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@id/blueTooth_go"
+                android:textColor="#bbb"
+                android:textSize="11sp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/green" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/wifi_listselector"
+            android:gravity="left|center_vertical"
+            android:onClick="onClick"
+            android:paddingLeft="20dp"
+            android:text="取消配对" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/green" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@color/burlywood" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="已配对设备"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/blue_re9"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+           >
+
+            <TextView
+                android:id="@+id/boule_nameText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="重命名"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/blue_name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:textColor="#bbb"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/blue_Editname1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@id/blueTooth_go"
+                android:textColor="#bbb"
+                android:textSize="11sp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/green" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/wifi_listselector"
+            android:gravity="left|center_vertical"
+            android:onClick="onClick"
+            android:paddingLeft="20dp"
+            android:text="取消配对" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/green" />
+    </LinearLayout>
+
+</LinearLayout>

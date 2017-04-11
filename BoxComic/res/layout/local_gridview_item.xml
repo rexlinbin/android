@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="135dp" >
+
+        <ImageView
+            android:id="@+id/frament_home_item_image"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/frament_home_default"
+            android:scaleType="fitXY" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/frament_home_item_titleTag"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="8dp"
+        android:singleLine="true"
+        android:text="一千零九夜"
+        android:textColor="#555555"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/frament_home_item_updateTAg"
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textColor="#fff"
+        android:textSize="11sp" />
+
+</LinearLayout>

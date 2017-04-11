@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/movieinfo_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/title_bg" >
+
+        <ImageButton
+            android:id="@+id/titel_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:src="@drawable/selector_back" />
+
+        <TextView
+            android:id="@+id/titleName_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text=""
+            android:textColor="#fff"
+            android:textSize="15sp" />
+
+        <ImageButton
+            android:id="@+id/title_collect"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:src="@drawable/selector_collect" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.utils.views.MyScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#10ffffff" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="15dp" >
+
+                        <ImageView
+                            android:id="@+id/movie_imageView"
+                            android:layout_width="110dp"
+                            android:layout_height="150dp"
+                            android:background="#30ffffff"
+                            android:padding="5dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/default_200" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxWidth="150dp"
+                                    android:singleLine="true"
+                                    android:text="豆瓣评分："
+                                    android:textColor="#90ffffff"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/score_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:textColor="#ff6137"
+                                    android:textSize="18sp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/type_textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:singleLine="true"
+                                android:text="类型："
+                                android:textColor="#90ffffff"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/time_textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:singleLine="true"
+                                android:text="上映时间："
+                                android:textColor="#90ffffff"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center_vertical"
+                                android:visibility="invisible" >
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxWidth="150dp"
+                                    android:singleLine="true"
+                                    android:text="来源："
+                                    android:textColor="#90ffffff"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/source_textView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/selector_laiyuan"
+                                    android:drawableRight="@drawable/laiyuan_xiala"
+                                    android:gravity="center"
+                                    android:padding="3dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="#90ffffff"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp" >
+
+                                <TextView
+                                    android:id="@+id/play_textView"
+                                    android:layout_width="90dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/info_button_selector"
+                                    android:gravity="center"
+                                    android:text="立即播放"
+                                    android:textColor="@drawable/comm_dialog_button_text_selector"
+                                    android:textSize="13sp" />
+
+                                <TextView
+                                    android:id="@+id/download_textView"
+                                    android:layout_width="90dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@drawable/info_button_selector"
+                                    android:gravity="center"
+                                    android:text="下载"
+                                    android:textColor="@drawable/comm_dialog_button_text_selector"
+                                    android:textSize="13sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:background="#10ffffff" >
+
+                    <TextView
+                        android:id="@+id/intro_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="简介"
+                        android:textColor="@drawable/selector_info_text"
+                        android:textSize="15sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/episodes_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="剧集"
+                        android:textColor="@drawable/selector_info_text"
+                        android:textSize="15sp"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/tuijian_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="推荐 "
+                        android:textColor="@drawable/selector_info_text"
+                        android:textSize="15sp"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/cursor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="matrix"
+                    android:src="@drawable/line"
+                    android:visibility="invisible" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:flipInterval="30"
+                    android:persistentDrawingCache="animation" />
+            </LinearLayout>
+        </com.utils.views.MyScrollView>
+
+        <LinearLayout
+            android:id="@+id/download_layout"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_alignParentBottom="true"
+            android:background="#fff"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <com.utils.views.MyScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true"
+                android:scrollbars="none" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/definition_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="25dp"
+                        android:text="清晰度"
+                        android:textColor="#bbb"
+                        android:textSize="13sp" />
+
+                    <com.utils.views.HorizontalListView
+                        android:id="@+id/definition_horizontalListView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginRight="28dp"
+                        android:layout_marginTop="10dp" >
+                    </com.utils.views.HorizontalListView>
+
+                    <TextView
+                        android:id="@+id/episode_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="15dp"
+                        android:text="集数"
+                        android:textColor="#bbb"
+                        android:textSize="13sp"
+                        android:visibility="gone" />
+
+                    <com.utils.views.MyGridView
+                        android:id="@+id/episode_gridView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:numColumns="6"
+                        android:visibility="gone" >
+                    </com.utils.views.MyGridView>
+                </LinearLayout>
+            </com.utils.views.MyScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/download_cancel_textView"
+                    android:layout_width="110dp"
+                    android:layout_height="34dp"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center"
+                    android:text="取消" />
+
+                <TextView
+                    android:id="@+id/download_sure_textView"
+                    android:layout_width="110dp"
+                    android:layout_height="34dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/download_button_selector"
+                    android:gravity="center"
+                    android:text="确定下载"
+                    android:textColor="@drawable/download_button_text_selector" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/source_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#fff"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ListView
+                android:id="@+id/source_listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </ListView>
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:background="#f0f0f0" />
+
+            <TextView
+                android:id="@+id/source_cancel_textView"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="#777"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

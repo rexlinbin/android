@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_gravity="right" >
+
+    <com.bccv.threedimensionalworld.tool.MyDigitalClock
+        android:id="@+id/digitalClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textColor="#fff"
+        android:textSize="26sp" />
+    
+
+
+    <ImageView
+        android:id="@+id/wifi_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/wifi"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/bluetooth_imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/bluetooth"
+        android:visibility="invisible" />
+
+</LinearLayout>

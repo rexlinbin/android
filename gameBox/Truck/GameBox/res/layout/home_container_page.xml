@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/home_top_title"
+        layout="@layout/common_title_view" />
+
+    <LinearLayout
+        android:id="@+id/home_tab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/home_top_title"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <com.boxuu.gamebox.ui.view.CheackableButton
+            android:id="@+id/online_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/navbg_selected"
+            android:gravity="center"
+            android:text="@string/online"
+            android:textColor="@color/tap_text_checked"
+            android:textSize="15sp" />
+
+        <com.boxuu.gamebox.ui.view.CheackableButton
+            android:id="@+id/outline_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/navbg"
+            android:gravity="center"
+            android:text="@string/outline"
+            android:textColor="@color/tap_text_uncheck"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/home_tab"
+        android:background="@android:color/white" />
+
+</RelativeLayout>

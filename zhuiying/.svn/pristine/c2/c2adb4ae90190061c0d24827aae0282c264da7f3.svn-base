@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/share_bg"
+    android:orientation="vertical" >
+
+	
+    
+    
+    
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:layout_gravity="center_horizontal"
+         android:layout_marginTop="50dp"
+         android:background="@drawable/share_logo"
+        />
+    
+    
+    
+    
+    
+    
+    <TextView 
+        android:id="@+id/dialog_message"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+       android:gravity="center"
+        android:textSize="15sp"
+        android:maxEms="8"
+        android:text=""
+        android:textColor="#999999"/>
+      
+    <TextView 
+        android:id="@+id/dialog_url"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+       android:gravity="center"
+        android:textSize="15sp"
+        android:text=""
+        android:textColor="#00BDB1"/>
+    
+    
+
+    
+    <LinearLayout 
+        android:id="@+id/dialog_ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+        <TextView 
+            android:id="@+id/dialog_cancle"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="@string/update_cancel"
+            android:background="@drawable/comm_dialog_button_selector"
+            android:textColor="@drawable/comm_dialog_button_text_selector"
+            android:textSize="15sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"/>
+        <TextView 
+            android:id="@+id/dialog_enter"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="@string/setting_zhan"
+            android:background="@drawable/comm_dialog_button_selector"
+            android:textColor="@drawable/comm_dialog_button_text_selector"
+            android:textSize="15sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center"/>
+    </LinearLayout>
+    
+</LinearLayout>

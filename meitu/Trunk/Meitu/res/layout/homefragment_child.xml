@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919" >
+
+    <com.me.maxwin.view.XListView
+        xmlns:pla="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/home_fragment_xlv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#191919"
+        android:fastScrollEnabled="true"
+        android:scrollbars="none" 
+        pla:plaColumnPaddingLeft="2.5dp"
+        pla:plaColumnPaddingRight="2.5dp"
+        pla:plaColumnNumber="2"/>
+
+    <LinearLayout
+        android:id="@+id/ll_no_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:textColor="#666666"
+            android:text="暂时没有数据,下拉刷新"
+            android:textSize="16sp" />
+    </LinearLayout>
+    
+    <include 
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         layout="@layout/common_waiting"
+         android:focusable="true" />
+
+</FrameLayout>

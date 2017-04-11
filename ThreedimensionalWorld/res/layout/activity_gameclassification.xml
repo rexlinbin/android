@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000" >
+
+        <LinearLayout
+            android:id="@+id/left_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/game_bg"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <com.bccv.threedimensionalworld.view.MyTitleView
+                    android:id="@+id/left_myTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="-60dp" />
+
+                <RelativeLayout
+                    android:id="@+id/left_relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+
+                    <Button
+                        android:id="@+id/Game_action_button"
+                        android:layout_width="160dp"
+                        android:layout_height="320dp"
+                        android:layout_alignParentLeft="true"
+                        android:onClick="onActionClick"
+                    
+                         android:layout_marginTop="50dp"
+                        android:background="@drawable/game_action" />
+
+                    <Button
+                        android:id="@+id/Game_relaxtion_button"
+                        android:layout_width="160dp"
+                        android:layout_height="320dp"
+                          android:layout_marginTop="290dp"
+                          android:onClick="onRelaxtionClick"
+                        android:layout_alignParentLeft="true"
+                     
+                        android:background="@drawable/game_relaxation" />
+
+                    <Button
+                        android:id="@+id/Game_sports_button"
+                        android:layout_width="258dp"
+                        android:layout_height="595dp"
+                        android:onClick="onSportsClick"
+                       android:layout_marginLeft="113dp"
+                          android:layout_marginTop="33dp"
+                        android:background="@drawable/game_sports" />
+
+                    <Button
+                        android:id="@+id/Game_CosPlay_button"
+                        android:layout_width="160dp"
+                        android:layout_height="320dp"
+                          android:onClick="onCosPlayClick"
+                          android:layout_marginTop="50dp"
+                           android:layout_marginLeft="324dp"
+                        android:background="@drawable/game_cosplay" />
+
+                    <Button
+                        android:id="@+id/Game_ChildGame_button"
+                        android:layout_width="160dp"
+                        android:layout_height="320dp"
+                          android:onClick="onChildGameClick"
+                       android:layout_marginLeft="444dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/game_childgame" />
+
+                    <Button
+                        android:id="@+id/Game_cars_button"
+                        android:layout_width="298dp"
+                        android:layout_height="320dp"
+                        android:onClick="onCarsClick"
+                         android:layout_marginTop="290dp"
+                       android:layout_marginLeft="316dp"
+                        android:background="@drawable/game_cars" />
+                       <Button
+                        android:id="@+id/Game_Motionsensing_button"
+                          android:layout_width="258dp"
+                        android:layout_height="590dp"
+                        android:onClick="onCarsClick"
+                          android:layout_marginTop="33dp"
+                     android:layout_marginLeft="558dp"
+                        android:background="@drawable/game_motionsensing"
+                        android:visibility="gone" />
+                    
+                    
+                    
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        
+        
+  <LinearLayout
+            android:id="@+id/right_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/game_bg"
+            android:orientation="horizontal" >
+        
+        
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <com.bccv.threedimensionalworld.view.MyTitleView
+                    android:id="@+id/right_myTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="-60dp" />
+
+                <RelativeLayout
+                    android:id="@+id/right_relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+
+                   
+                    <Button
+                        android:id="@+id/Game_action_button1"
+                        android:layout_width="160dp"
+                        android:layout_height="320dp"
+                        android:layout_alignParentLeft="true"
+                        android:onClick="onActionClick"
+                    
+                         android:layout_marginTop="50dp"
+                        android:background="@drawable/game_action" />
+
+                    <Button
+                        android:id="@+id/Game_relaxtion_button1"
+                        android:layout_width="160dp"
+                        android:layout_height="320dp"
+                        android:layout_marginTop="290dp"
+                          android:onClick="onRelaxtionClick"
+                        android:layout_alignParentLeft="true"
+                     
+                        android:background="@drawable/game_relaxation" />
+
+                    <Button
+                        android:id="@+id/Game_sports_button1"
+                        android:layout_width="258dp"
+                        android:layout_height="595dp"
+                        android:onClick="onSportsClick"
+                       android:layout_marginLeft="113dp"
+                          android:layout_marginTop="33dp"
+                        android:background="@drawable/game_sports" />
+
+                    <Button
+                        android:id="@+id/Game_CosPlay_button1"
+                        android:layout_width="160dp"
+                        android:layout_height="320dp"
+                          android:onClick="onCosPlayClick"
+                          android:layout_marginTop="50dp"
+                           android:layout_marginLeft="324dp"
+                        android:background="@drawable/game_cosplay" />
+
+                    <Button
+                        android:id="@+id/Game_ChildGame_button1"
+                        android:layout_width="160dp"
+                        android:layout_height="320dp"
+                          android:onClick="onChildGameClick"
+                       android:layout_marginLeft="444dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/game_childgame" />
+
+                    <Button
+                        android:id="@+id/Game_cars_button1"
+                        android:layout_width="298dp"
+                        android:layout_height="320dp"
+                        android:onClick="onCarsClick"
+                         android:layout_marginTop="290dp"
+                       android:layout_marginLeft="316dp"
+                        android:background="@drawable/game_cars" />
+                       <Button
+                        android:id="@+id/Game_Motionsensing_button1"
+                          android:layout_width="258dp"
+                        android:layout_height="590dp"
+                        android:onClick="onCarsClick"
+                          android:layout_marginTop="33dp"
+                     android:layout_marginLeft="558dp"
+                        android:background="@drawable/game_motionsensing"
+                        android:visibility="gone" />
+                    
+                    
+                </RelativeLayout>
+            </RelativeLayout>
+        
+        </LinearLayout>
+        
+        
+    </LinearLayout>
+
+</LinearLayout>

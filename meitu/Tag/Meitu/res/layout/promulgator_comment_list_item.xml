@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/pro_rl_comment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:id="@+id/pro_iv_comment_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_img_user_default" />
+
+        <TextView
+            android:id="@+id/pro_tv_comment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/pro_iv_comment_item"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/pro_iv_comment_item"
+            android:text="@string/comment_name"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/pro_tv_comment_datails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pro_tv_comment_name"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="12dp"
+            android:layout_toRightOf="@id/pro_iv_comment_item"
+            android:singleLine="true"
+            android:text="@string/example_comment"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/pro_tv_comment_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/pro_tv_comment_name"
+            android:layout_marginRight="10dp"
+            android:text="@string/comment_time"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </RelativeLayout>
+    
+    <TextView 
+        android:id="@+id/pro_tv_no_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:text="暂无评论"/>
+
+</RelativeLayout>

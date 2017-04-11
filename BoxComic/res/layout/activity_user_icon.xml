@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee" >
+
+    <RelativeLayout
+        android:id="@+id/rl_user_icon_title"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="#ff3746" >
+
+        <ImageView
+            android:id="@+id/user_icon_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="15dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/user_icon_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="修改个人信息"
+            android:textSize="18sp"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/rl_user_icon_title"
+        android:background="#eeeeee" />
+
+    <RelativeLayout
+        android:id="@+id/ll_user_icon"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/line" 
+        android:background="@drawable/user_click_selector">
+
+        <TextView
+            android:id="@+id/icon_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="头像"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/user_icon_iv"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line_two"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/ll_user_icon"
+        android:background="#eeeeee" />
+
+    <RelativeLayout
+        android:id="@+id/rl_user_icon"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/line_two"
+        android:background="@drawable/user_click_selector" >
+
+        <TextView
+            android:id="@+id/icon_nickname"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:text="昵称"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/user_icon_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#999999"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:background="@android:color/transparent"
+            android:hint="输入新昵称"
+            android:textColor="#333333"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+    
+    <View
+        android:id="@+id/line_three"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/rl_user_icon"
+        android:background="#eeeeee" />
+
+    
+
+    <LinearLayout
+        android:id="@+id/ll_other"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rl_user_icon"
+        android:orientation="vertical" >
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="fill_parent"
+            android:layout_height="20dp"
+            android:background="#eeeeee" />
+    </LinearLayout>
+    
+   
+</RelativeLayout>

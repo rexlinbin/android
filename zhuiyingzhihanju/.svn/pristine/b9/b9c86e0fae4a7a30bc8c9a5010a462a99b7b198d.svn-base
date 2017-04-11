@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/color_feedbackbg"
+    android:orientation="vertical" >
+    
+
+    <EditText 
+        android:id="@+id/Feedback_edit"
+        android:layout_width="fill_parent"
+        android:layout_height="135dp"
+        android:hint="在这里写您的反馈"
+        android:padding="15dp"
+        
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:background="#f5f5f5"
+        android:textSize="13sp"
+        android:textColor="#bbb"
+        android:gravity="top|left"
+        />
+    <Button
+                android:id="@+id/Feedback_btn"
+                android:layout_width="110dp"
+                android:layout_height="36dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="20dp"
+                
+                android:background="@drawable/log_btn"
+                
+                android:text="提交"
+                android:textSize="14sp"
+                android:textColor="#fff"
+                android:layout_below="@id/Feedback_edit"
+                android:layout_alignParentRight="true"
+                 />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</RelativeLayout>

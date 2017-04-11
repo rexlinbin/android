@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#20ffffff" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/type_imageView"
+            android:layout_width="170dp"
+            android:layout_height="90dp"
+            android:background="#30ffffff"
+            android:padding="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/default_320" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp" >
+
+            <TextView
+                android:id="@+id/title_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp" >
+
+                <TextView
+                    android:id="@+id/num_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/special_movie"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="TextView"
+                    android:textColor="#90ffffff"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/hit_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/special_times"
+                    android:layout_marginLeft="10dp"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="TextView"
+                    android:textColor="#90ffffff"
+                    android:textSize="10sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/info_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#90ffffff"
+        android:textSize="12sp"
+        android:layout_marginTop="15dp" />
+
+</LinearLayout>

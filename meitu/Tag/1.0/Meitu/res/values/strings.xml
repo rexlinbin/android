@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="cache_app_name">Yuese</string>
+    <string name="app_name">悦色</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="pic_description">This is ImageView</string>
+    <string name="promul_name">发布者姓名</string>
+    <string name="promul_time">2天前上传</string>
+    <string name="add_text">添加标签</string>
+    <string name="album_name">专辑名称</string>
+    <string name="pro_name">发布者姓名</string>
+    <string name="more_album">相关专辑</string>
+    <string name="hot_comment">最新评论</string>
+    <string name="load_more">加载更多</string>
+    <string name="comment_name">姓名</string>
+    <string name="comment_time">3分钟前</string>
+    <string name="pro_album">专辑</string>
+    <string name="pro_comment">评论</string>
+    <string name="pro_album_num">共45张</string>
+    <string name="photo_danmu">弹幕</string>
+    <string name="example_comment">
+       	 评论内容评论内容评论内内容评论内容评论内容评论内容评论内容评论内容评论内容
+	</string>
+	
+   <string name="runningFaceDetection">请稍后 &#8230;</string>
+   
+   <string name="tel_str">content://telephony/carriers/preferapn</string>
+
+</resources>

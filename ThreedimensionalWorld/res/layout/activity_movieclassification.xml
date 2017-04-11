@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000" >
+
+        <LinearLayout
+            android:id="@+id/left_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bg" />
+
+                <com.bccv.threedimensionalworld.view.MyTitleView
+                    android:id="@+id/left_myTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp" />
+                <RelativeLayout
+                    android:id="@+id/left_relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+
+                    <Button
+                        android:id="@+id/left_3dfilm_Button"
+                        android:layout_width="243dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/movieclassification_3dfilm" />
+
+                    <Button
+                        android:id="@+id/left_3dbeauty_Button"
+                        android:layout_width="295dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="186dp"
+                        android:layout_marginTop="58dp"
+                        android:background="@drawable/movieclassification_3dbeauty" />
+
+                    <Button
+                        android:id="@+id/left_experience_Button"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="195dp"
+                        android:layout_marginTop="293dp"
+                        android:background="@drawable/movieclassification_experience" />
+
+                    <Button
+                        android:id="@+id/left_record_Button"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="313dp"
+                        android:layout_marginTop="293dp"
+                        android:background="@drawable/movieclassification_record" />
+
+                    <Button
+                        android:id="@+id/left_3dmusic_Button"
+                        android:layout_width="243dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="424dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/movieclassification_3dmusic" />
+
+                    <Button
+                        android:id="@+id/left_2d_Button"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="619dp"
+                        android:layout_marginTop="58dp"
+                        android:background="@drawable/movieclassification_2d" />
+                    <Button
+                        android:id="@+id/left_user_Button"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="619dp"
+                        android:layout_marginTop="293dp"
+                        android:background="@drawable/movieclassification_user" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/right_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bg" />
+
+               <com.bccv.threedimensionalworld.view.MyTitleView
+                    android:id="@+id/right_myTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp" />
+                <RelativeLayout
+                    android:id="@+id/right_relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+
+                   <Button
+                        android:id="@+id/right_3dfilm_Button"
+                        android:layout_width="243dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/movieclassification_3dfilm" />
+
+                    <Button
+                        android:id="@+id/right_3dbeauty_Button"
+                        android:layout_width="295dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="186dp"
+                        android:layout_marginTop="58dp"
+                        android:background="@drawable/movieclassification_3dbeauty" />
+
+                    <Button
+                        android:id="@+id/right_experience_Button"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="195dp"
+                        android:layout_marginTop="293dp"
+                        android:background="@drawable/movieclassification_experience" />
+
+                    <Button
+                        android:id="@+id/right_record_Button"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="313dp"
+                        android:layout_marginTop="293dp"
+                        android:background="@drawable/movieclassification_record" />
+
+                    <Button
+                        android:id="@+id/right_3dmusic_Button"
+                        android:layout_width="243dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="424dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/movieclassification_3dmusic" />
+
+                    <Button
+                        android:id="@+id/right_2d_Button"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="619dp"
+                        android:layout_marginTop="58dp"
+                        android:background="@drawable/movieclassification_2d" />
+                    <Button
+                        android:id="@+id/right_user_Button"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="619dp"
+                        android:layout_marginTop="293dp"
+                        android:background="@drawable/movieclassification_user" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

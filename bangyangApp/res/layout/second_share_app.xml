@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.bccv.bangyangapp.ui.view.BackGroundView
+        android:id="@+id/app_bg_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <RelativeLayout
+        android:id="@+id/app_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:id="@+id/common_title_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp" >
+
+            <TextView
+                android:id="@+id/tv_common_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_app_left_selector"
+                android:duplicateParentState="true"
+                android:gravity="center"
+                android:text="@string/app_left"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/common_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:textSize="23sp" />
+
+        <LinearLayout
+            android:id="@+id/common_title_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
+
+            <TextView
+                android:id="@+id/tv_common_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/add_app_left_selector"
+                android:duplicateParentState="true"
+                android:gravity="center"
+                android:text="@string/app_right"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_white_bg"
+        android:layout_below="@id/app_title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/rl_choose_app"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp" >
+
+            <ImageView
+                android:id="@+id/iv_app_logo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/default_icon"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/iv_app_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/add_icon_selector"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_app_click"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toLeftOf="@id/iv_app_add"
+                android:layout_toRightOf="@id/iv_app_logo"
+                android:text="@string/click"
+                android:textColor="#d5d5d5"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="195dp" >
+
+            <com.bccv.bangyangapp.ui.view.ControlNumEditText
+                android:id="@+id/app_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="195dp"
+                android:background="@drawable/text_bg"
+                android:gravity="top"
+                android:hint="@string/app_hint"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="20dp"
+                android:textColorHint="#bbbbbb"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/app_limit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/app_limit"
+                android:textColor="#bbbbbb"
+                android:textSize="11sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

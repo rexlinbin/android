@@ -1,0 +1,122 @@
+package com.bccv.zhuiying.api;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.json.JSONObject;
+
+import com.alibaba.fastjson.JSON;
+
+import com.bccv.zhuiying.model.Movie;
+import com.bccv.zhuiying.model.MovieModel;
+import com.utils.net.HttpClientUtil;
+import com.utils.tools.Logger;
+import com.utils.tools.StringUtils;
+
+import android.util.Log;
+
+public class FancyApi extends AppApi {
+
+	public MovieModel getMovielist() {
+		HttpClientUtil util = new HttpClientUtil();
+		Map<String, String> params = new HashMap<String, String>();
+
+		String result = util.sendGet(Url.Today_list, params);
+		if (result != null) {
+			Log.e("Today_list", result);
+		} else {
+			Log.e("Today_list", "null");
+		}
+		if (!StringUtils.isEmpty(result)) {
+			try {
+				result = result.substring(result.indexOf("{"), result.lastIndexOf("}") + 1);
+				JSONObject jsonObject = new JSONObject(result);
+				if (checkResponse(jsonObject)) {
+//					String rtnStr = jsonObject.getString("data");
+
+//					if (!StringUtils.isEmpty(rtnStr) && !rtnStr.equals("null")) {
+						MovieModel list = null;
+						list = JSON.parseObject(result, MovieModel.class);
+						return list;
+//					}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return null;
+	}
+
+	public List<Movie> getTopList() {
+
+		HttpClientUtil util = new HttpClientUtil();
+
+		Map<String, String> params = new HashMap<String, String>();
+
+		String result = util.sendGet(Url.Top_list, params);
+		Logger.e("Top_list", result);
+		if (!StringUtils.isEmpty(result)) {
+
+			try {
+				result = result.substring(result.indexOf("{"), result.lastIndexOf("}") + 1);
+				JSONObject jsonObject = new JSONObject(result);
+
+				if (checkResponse(jsonObject)) {
+					String rtnStr = jsonObject.getString("data");
+
+					if (!StringUtils.isEmpty(rtnStr) && !rtnStr.equals("null")) {
+						List<Movie> list = null;
+						list = JSON.parseArray(rtnStr, Movie.class);
+						return list;
+					}
+
+				}
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+
+		}
+
+		return null;
+
+	}
+	public List<Movie> getMoreList() {
+
+		HttpClientUtil util = new HttpClientUtil();
+
+		Map<String, String> params = new HashMap<String, String>();
+
+		String result = util.sendGet(Url.Moreurl, params);
+		Logger.e("wat_list", result);
+		if (!StringUtils.isEmpty(result)) {
+
+			try {
+				result = result.substring(result.indexOf("{"), result.lastIndexOf("}") + 1);
+				JSONObject jsonObject = new JSONObject(result);
+
+				if (checkResponse(jsonObject)) {
+					String rtnStr = jsonObject.getString("data");
+
+					if (!StringUtils.isEmpty(rtnStr) && !rtnStr.equals("null")) {
+						List<Movie> list = null;
+						list = JSON.parseArray(rtnStr, Movie.class);
+						return list;
+					}
+
+				}
+
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+
+		}
+
+		return null;
+
+	}
+}

@@ -1,0 +1,1 @@
+{"chapters":[{"id":1,"name":"第一章","filename":"2_1.txt"},{"id":2,"name":"第二章","filename":"2_2.txt"},{"id":3,"name":"第三章","filename":"2_3.txt"},{"id":4,"name":"第四章","filename":"2_4.txt"},{"id":5,"name":"第五章","filename":"2_5.txt"},{"id":6,"name":"六第六章","filename":"2_6.txt"},{"id":7,"name":"七第七章","filename":"2_7.txt"},{"id":8,"name":"八第八章","filename":"2_8.txt"}]}

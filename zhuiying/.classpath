@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="libs/prettytime-3.2.4.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/universal-image-loader-1.9.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/nineoldandroids-library-2.4.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/org.apache.http.legacy.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/cyberplayer-sdk.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/GetuiExt-2.0.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/GetuiSDK2.8.1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/mid-mid-sdk-2.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/mta-android-stat-sdk-2.1.0_20160111.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/TalkingData_Analytics_Android_SDK.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/android-support-v4.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/fastjson-1.2.23.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

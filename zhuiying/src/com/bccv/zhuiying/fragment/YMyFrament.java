@@ -1,0 +1,419 @@
+package com.bccv.zhuiying.fragment;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.bccv.zhuiying.R;
+import com.bccv.zhuiying.activity.CollectActivity;
+import com.bccv.zhuiying.activity.DownloadActivity;
+import com.bccv.zhuiying.activity.HistoryActivity;
+import com.bccv.zhuiying.activity.MoreListActivity;
+import com.bccv.zhuiying.activity.MovieInfoActivity;
+import com.bccv.zhuiying.activity.MovieSearchActivity;
+import com.bccv.zhuiying.activity.SetActivity;
+import com.bccv.zhuiying.activity.Video2DPlayerActivity;
+import com.bccv.zhuiying.activity.VideoMagnetPlayerActivity;
+import com.bccv.zhuiying.adapter.HistoryAdapter;
+import com.bccv.zhuiying.adapter.MovieListAdapter;
+import com.bccv.zhuiying.api.FancyApi;
+import com.bccv.zhuiying.api.MagnetApi;
+import com.bccv.zhuiying.model.Magnet;
+import com.bccv.zhuiying.model.Movie;
+import com.tendcloud.tenddata.TCAgent;
+import com.utils.tools.BaseActivity;
+import com.utils.tools.Callback;
+import com.utils.tools.ClipBoardUtils;
+import com.utils.tools.GlobalParams;
+import com.utils.tools.SerializationUtil;
+import com.utils.views.CiDialog;
+import com.utils.views.CiDialog.Cicallback;
+import com.utils.views.MyGridView;
+
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+public class YMyFrament extends BaseActivity {
+
+	private MyGridView Hlist, MoreList;
+
+	private List<Movie> data;
+
+	private List<Movie> movieList;
+	private BaseAdapter hisAdapter, MovieAdapter;
+	private List<Movie> list;
+	private RelativeLayout HGo, CGo, MGo, DGo;
+
+	private TextView hText;
+	private List<Movie> HlistData;
+	private ImageView goIm, cgoIm, DGoIm, MgoIm;
+	private ImageButton ciBtn;
+	private CiDialog ciD;
+	Magnet magnet;
+	String magnetUrl;
+	private String url;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.fragment_my);
+		ciD = new CiDialog();
+		ImageButton backBtn = (ImageButton) findViewById(R.id.titel_back);
+		backBtn.setVisibility(View.INVISIBLE);
+		ImageView logoIm = (ImageView) findViewById(R.id.titel_logo);
+		logoIm.setVisibility(View.VISIBLE);
+
+		ImageButton searChBtn = (ImageButton) findViewById(R.id.titel_search);
+		searChBtn.setVisibility(View.VISIBLE);
+		searChBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+
+				Intent aIntent = new Intent(YMyFrament.this, MovieSearchActivity.class);
+
+				startActivity(aIntent);
+
+			}
+		});
+
+		ImageButton setBtn = (ImageButton) findViewById(R.id.my_set);
+		setBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent aIntent = new Intent(YMyFrament.this, SetActivity.class);
+
+				startActivity(aIntent);
+			}
+		});
+		ImageButton colletChBtn = (ImageButton) findViewById(R.id.titel_collect);
+		colletChBtn.setVisibility(View.VISIBLE);
+
+		colletChBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivityWithSlideAnimation(CollectActivity.class);
+			}
+		});
+
+		ImageButton hisBtn = (ImageButton) findViewById(R.id.titel_history);
+		hisBtn.setVisibility(View.VISIBLE);
+
+		hisBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivityWithSlideAnimation(HistoryActivity.class);
+			}
+		});
+		ciBtn = (ImageButton) findViewById(R.id.my_ci);
+
+		if (GlobalParams.magnet == 1) {
+			ciBtn.setVisibility(View.VISIBLE);
+
+		} else {
+			ciBtn.setVisibility(View.INVISIBLE);
+		}
+
+		ciBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+
+				ciD.CiDialog(ClipBoardUtils.getClipBoardString(getApplicationContext()), getApplicationContext(),
+						YMyFrament.this);
+			}
+		});
+
+		ciD.setDialogCallback(new Cicallback() {
+			@Override
+			public void dialogdo(boolean is, String url) {
+				// TODO Auto-generated method stub
+
+				YMyFrament.this.url = url;
+				setCiData();
+			}
+		});
+
+		data = new ArrayList<Movie>();
+		movieList = new ArrayList<Movie>();
+
+		hText = (TextView) findViewById(R.id.my_history_text2);
+
+		Hlist = (MyGridView) findViewById(R.id.my_history_grid);
+
+		MoreList = (MyGridView) findViewById(R.id.my_history_grid2);
+
+		hisAdapter = new HistoryAdapter(this, data);
+
+		MovieAdapter = new MovieListAdapter(this, movieList);
+
+		Hlist.setAdapter(hisAdapter);
+		MoreList.setAdapter(MovieAdapter);
+		MoreList.setSelector(new ColorDrawable(android.R.color.transparent));
+		MoreList.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				// TODO Auto-generated method stub
+
+				Intent aIntent = new Intent(YMyFrament.this, MovieInfoActivity.class);
+
+				aIntent.putExtra("movie", movieList.get(position));
+
+				startActivity(aIntent);
+
+			}
+		});
+		Hlist.setSelector(new ColorDrawable(android.R.color.transparent));
+		Hlist.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				// TODO Auto-generated method stub
+
+				Movie movie = HlistData.get(position);
+
+				HlistData.remove(movie);
+				HlistData.add(0, movie);
+				SerializationUtil.wirteHistorySerialization(YMyFrament.this, (Serializable) HlistData);
+
+				Intent aIntent = new Intent(YMyFrament.this, Video2DPlayerActivity.class);
+
+				aIntent.putExtra("movie", movie);
+
+				startActivity(aIntent);
+
+			}
+		});
+
+		HGo = (RelativeLayout) findViewById(R.id.my_history_rl);
+
+		// 下载
+		DGoIm = (ImageButton) findViewById(R.id.my_huancun_goBtn);
+		DGo = (RelativeLayout) findViewById(R.id.my_down_rl);
+		CGo = (RelativeLayout) findViewById(R.id.my_collect_rl);
+		MGo = (RelativeLayout) findViewById(R.id.my_EV_rl);
+		goIm = (ImageView) findViewById(R.id.my_history_goBtn);
+		cgoIm = (ImageView) findViewById(R.id.my_collect_goBtn);
+		MgoIm = (ImageView) findViewById(R.id.my_EV_goBtn);
+		HGo.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivityWithSlideAnimation(HistoryActivity.class);
+			}
+		});
+		goIm.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivityWithSlideAnimation(HistoryActivity.class);
+			}
+		});
+		CGo.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivityWithSlideAnimation(CollectActivity.class);
+			}
+		});
+		cgoIm.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivityWithSlideAnimation(CollectActivity.class);
+			}
+		});
+		MGo.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivityWithSlideAnimation(MoreListActivity.class);
+			}
+		});
+		MgoIm.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivityWithSlideAnimation(MoreListActivity.class);
+			}
+		});
+		DGoIm.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivityWithSlideAnimation(DownloadActivity.class);
+			}
+		});
+
+		DGo.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivityWithSlideAnimation(DownloadActivity.class);
+			}
+		});
+
+		getData();
+
+	}
+
+	public void setCiData() {
+
+		Callback callback = new Callback() {
+
+			@Override
+			public void handleResult(String result) {
+				// TODO Auto-generated method stub
+				if (result.equals("true") && magnet != null) {
+					if (magnet.getStatus() == 1) {
+
+						magnetUrl = magnet.getUrl();
+
+						Intent aIntent = new Intent(YMyFrament.this, VideoMagnetPlayerActivity.class);
+						aIntent.putExtra("url", magnetUrl);
+						startActivity(aIntent);
+
+					} else {
+						showLongToast(magnet.getMsg());
+					}
+
+				}
+
+			}
+		};
+
+		new DataAsyncTask(callback, true) {
+
+			@Override
+			protected String doInBackground(String... params) {
+
+				try {
+
+					MagnetApi api = new MagnetApi();
+
+					// magnet=api.getMagentInfo("magnet:?xt=urn:btih:BD268522FFADC272E0EA29FE86ACD78A1FACE1BB&dn=%E6%B3%A2%E9%87%8E%E5%A4%9A%E7%BB%93%E8%A1%A3
+					// %E7%BB%8F%E5%85%B8%E6%97%A0%E7%A0%81");
+					magnet = api.getMagentInfo(url);
+					return "true";
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+
+				return "false";
+			}
+		}.execute("");
+	}
+
+	public void getData() {
+
+		Callback callback = new Callback() {
+
+			@Override
+			public void handleResult(String result) {
+				// TODO Auto-generated method stub
+
+				if (list != null) {
+
+					if (list.size() > 3) {
+						movieList.add(list.get(0));
+						movieList.add(list.get(1));
+						movieList.add(list.get(2));
+
+					} else {
+						movieList.addAll(list);
+					}
+
+					MovieAdapter.notifyDataSetChanged();
+				}
+
+			}
+		};
+
+		new DataAsyncTask(callback, false) {
+
+			@Override
+			protected String doInBackground(String... params) {
+
+				FancyApi api = new FancyApi();
+
+				list = api.getMoreList();
+
+				return "true";
+			}
+		}.execute("");
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		data.clear();
+		HlistData = SerializationUtil.readHistoryCache(this.getApplicationContext());
+
+		if (HlistData != null) {
+			if (HlistData.size() > 0) {
+				goIm.setVisibility(View.VISIBLE);
+				hText.setVisibility(View.INVISIBLE);
+				Hlist.setVisibility(View.VISIBLE);
+				if (HlistData.size() > 4) {
+					data.add(HlistData.get(0));
+					data.add(HlistData.get(1));
+					data.add(HlistData.get(2));
+
+				} else {
+					data.addAll(HlistData);
+				}
+				hisAdapter.notifyDataSetChanged();
+			} else {
+
+				hText.setVisibility(View.VISIBLE);
+				goIm.setVisibility(View.INVISIBLE);
+				Hlist.setVisibility(View.GONE);
+			}
+
+		} else {
+			hText.setVisibility(View.VISIBLE);
+			goIm.setVisibility(View.INVISIBLE);
+			Hlist.setVisibility(View.GONE);
+
+		}
+		TCAgent.onPageStart(getApplicationContext(), "YMyFrament");
+	}
+	
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		TCAgent.onPageEnd(getApplicationContext(), "YMyFrament");
+	}
+}

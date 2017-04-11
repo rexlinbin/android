@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#252529"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/top_bg" >
+
+        <ImageView
+            android:id="@+id/back_textView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:background="@drawable/selector_mycomments_back" />
+
+        <TextView
+            android:id="@+id/title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/selector_controller_arrow"
+            android:gravity="center"
+            android:text="游戏手柄"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-3dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/rockerbg_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/rockerbg" />
+
+                <ImageView
+                    android:id="@+id/rockleft_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/arrow_left" />
+
+                <ImageView
+                    android:id="@+id/rockright_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/arrow_right" />
+
+                <ImageButton
+                    android:id="@+id/rocker_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignTop="@+id/rockleft_imageView"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rocker" />
+
+                <ImageView
+                    android:id="@+id/rockup_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/rockdown_imageView"
+                    android:layout_alignLeft="@+id/rocker_imageView"
+                    android:layout_marginBottom="27dp"
+                    android:src="@drawable/arrow_up" />
+
+                <ImageView
+                    android:id="@+id/rockdown_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/rocker_imageView"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="18dp"
+                    android:src="@drawable/arrow_down" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-30dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp" >
+
+                    <ImageButton
+                        android:id="@+id/left_imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/selector_controller_left"
+                        android:background="@drawable/selector_controller_btn"
+                        android:layout_marginRight="10dp" />
+
+                    <ImageButton
+                        android:id="@+id/right_imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/selector_controller_right"
+                        android:background="@drawable/selector_controller_btn"
+                        android:layout_marginLeft="10dp" />
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/sensor_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/selector_controller_sensor"
+                    android:background="@drawable/selector_controller_btn"
+                    android:layout_gravity="center_horizontal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp" >
+
+                    <ImageButton
+                        android:id="@+id/select_imageView"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_controller_select"
+                        android:layout_marginRight="10dp" />
+
+                    <ImageButton
+                        android:id="@+id/start_imageView"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_controller_start"
+                        android:layout_marginLeft="10dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center" >
+
+                <ImageButton
+                    android:id="@+id/y_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/selector_controller_y"
+                    android:background="@drawable/selector_controller_gamebtn"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="-10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" >
+
+                    <ImageButton
+                        android:id="@+id/x_imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/selector_controller_x"
+                        android:background="@drawable/selector_controller_gamebtn"
+                        android:layout_marginRight="25dp" />
+
+                    <ImageButton
+                        android:id="@+id/b_imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/selector_controller_b"
+                        android:background="@drawable/selector_controller_gamebtn"
+                        android:layout_marginLeft="25dp" />
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/a_imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/selector_controller_a"
+                    android:background="@drawable/selector_controller_gamebtn"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="-10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/direction_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:orientation="vertical"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/bottom_bg"
+                android:paddingBottom="15dp"
+                android:paddingTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/keycontroller_imageView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/selector_controller_keycontroller" />
+
+                <ImageView
+                    android:id="@+id/gamerocker_imageView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/selector_controller_gamerocker" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

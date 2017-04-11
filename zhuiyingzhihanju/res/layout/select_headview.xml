@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="190dp"
+        android:layout_marginBottom="10dp" >
+
+        <ImageView
+            android:id="@+id/select_fancy_ImageView"
+            android:layout_width="fill_parent"
+            android:scaleType="centerCrop"
+            android:layout_height="fill_parent" >
+        </ImageView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="102dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/banner_float" />
+
+        <TextView
+            android:id="@+id/fancy_viewPager_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal|bottom"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_point_group"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal|bottom"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

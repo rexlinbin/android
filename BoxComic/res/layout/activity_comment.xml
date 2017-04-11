@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/top_bg" >
+
+        <RelativeLayout
+            android:id="@+id/back_relativeLayout"
+            android:layout_width="48dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/commentTitle_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="评论"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_layout" >
+
+        <com.bccv.boxcomic.pulltorefresh.PullToRefreshListView
+            android:id="@+id/comment_pullToRefreshListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </com.bccv.boxcomic.pulltorefresh.PullToRefreshListView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/send_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ff5360"
+        android:gravity="center_vertical" >
+
+        <EditText
+            android:id="@+id/comment_editText"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:background="#ff5360"
+            android:hint="写评论。。。"
+            android:textColor="@color/white"
+            android:textColorHint="#e7c2b3" >
+        </EditText>
+
+        <ImageView
+            android:id="@+id/send_imageView"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:paddingRight="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/fasong" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,181 @@
+package com.bccv.zhuiying.api;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.json.JSONObject;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.bccv.zhuiying.model.MovieSource;
+import com.bccv.zhuiying.model.MovieUrl;
+import com.bccv.zhuiying.model.RealUrl;
+import com.bccv.zhuiying.model.TVUrl;
+import com.utils.net.HttpClientUtil;
+import com.utils.tools.GlobalParams;
+import com.utils.tools.Logger;
+import com.utils.tools.MD5Util;
+import com.utils.tools.StringUtils;
+
+import android.util.Log;
+
+public class MovieUrlApi extends AppApi {
+	public List<MovieUrl> getMovieUrlList(String movie_id, String type_id, String episodes_id) {
+		HttpClientUtil util = new HttpClientUtil();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("video_id", movie_id);
+		params.put("type_id", type_id);
+		String result;
+		if (!StringUtils.isEmpty(episodes_id)) {
+			params.put("episodes_id", episodes_id);
+			result = util.sendGet(Url.GetVideo_url, params);
+		} else {
+			result = util.sendGet(Url.GetMovie_url, params);
+		}
+
+		if (result != null) {
+			Log.e("getMovieUrlList", result);
+		} else {
+			Log.e("getMovieUrlList", "null");
+		}
+		if (!StringUtils.isEmpty(result)) {
+			try {
+				JSONObject jsonObject = new JSONObject(result);
+				if (checkResponse(jsonObject)) {
+					String rtnStr = jsonObject.getString("data");
+
+					if (!StringUtils.isEmpty(rtnStr) && !rtnStr.equals("null")) {
+
+						List<MovieUrl> list = new ArrayList<MovieUrl>();
+						if (!StringUtils.isEmpty(episodes_id)) {
+							JSONArray jsonArray = JSON.parseArray(rtnStr);
+							com.alibaba.fastjson.JSONObject jsonObject2 = jsonArray.getJSONObject(0);
+							JSONArray urlArray = jsonObject2.getJSONArray("source_text");
+							for (int i = 0; i < urlArray.size(); i++) {
+								com.alibaba.fastjson.JSONObject movieUrlObject = urlArray.getJSONObject(i);
+								MovieUrl movieUrl = new MovieUrl();
+								movieUrl.setSource_id(movieUrlObject.getString("source_url"));
+								movieUrl.setWebsite_name(movieUrlObject.getString("source_name"));
+								movieUrl.setWebsite_type(movieUrlObject.getString("website_type"));
+								list.add(movieUrl);
+							}
+						}else{
+							list = JSON.parseArray(rtnStr, MovieUrl.class);
+						}
+						return list;
+					}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return null;
+	}
+
+	public List<MovieSource> getMovieEpidsodeUrlList(String movie_id, String type_id, String episodes_id) {
+		HttpClientUtil util = new HttpClientUtil();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("video_id", movie_id);
+		params.put("type_id", type_id);
+		String result;
+		result = util.sendGet(Url.GetMovie_url, params);
+
+		if (result != null) {
+			Log.e("getMovieEpidsodeUrlList", result);
+		} else {
+			Log.e("getMovieEpidsodeUrlList", "null");
+		}
+		if (!StringUtils.isEmpty(result)) {
+			try {
+				JSONObject jsonObject = new JSONObject(result);
+				if (checkResponse(jsonObject)) {
+					String rtnStr = jsonObject.getString("data");
+
+					if (!StringUtils.isEmpty(rtnStr) && !rtnStr.equals("null")) {
+
+						List<MovieSource> list = null;
+						list = JSON.parseArray(rtnStr, MovieSource.class);
+						return list;
+					}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return null;
+	}
+	
+	public RealUrl getUrl(String url, String hd, boolean isDownload) {
+		HttpClientUtil util = new HttpClientUtil();
+		Map<String, String> params = new HashMap<String, String>();
+		String time = util.sendGet("http://api.zhensaikeji.com/time", params);
+		if (!StringUtils.isEmpty(time)) {
+			try {
+				JSONObject jsonObject = new JSONObject(time);
+				time = jsonObject.getString("time");
+			}catch(Exception e){
+				time = "";
+			}
+		}
+		String sign = MD5Util.string2MD5(time + "," + "an" + "," + GlobalParams.md5Key);
+		params.put("t", time);
+		params.put("sign", sign);
+		params.put("url", url);
+		params.put("hd", hd);
+		if (isDownload) {
+			params.put("ctype", "pc");
+		}
+		Logger.e("getUrl", time);
+		String result = util.sendGet(Url.GetReal_url, params);
+
+		if (result != null) {
+			Log.e("getUrl", result);
+		} else {
+			Log.e("getUrl", "null");
+		}
+		if (!StringUtils.isEmpty(result)) {
+			try {
+				JSONObject jsonObject = new JSONObject(result);
+				if (checkResponse(jsonObject)) {
+					RealUrl realUrl = new RealUrl();
+					realUrl.setUrl(jsonObject.getJSONObject("data").getString("url"));
+					realUrl.setFormat(jsonObject.getJSONObject("data").getString("format"));
+					realUrl.setUseragent(jsonObject.getJSONObject("data").getString("useragent"));
+					return realUrl;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return null;
+	}
+	
+	public TVUrl getTVUrl(String url) {
+		HttpClientUtil util = new HttpClientUtil();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("url", url);
+		Logger.e("getUrl", url);
+		String result = util.sendGet(Url.GetTV_url, params);
+
+		if (result != null) {
+			Log.e("getUrl", result);
+		} else {
+			Log.e("getUrl", "null");
+		}
+		if (!StringUtils.isEmpty(result)) {
+			try {
+				TVUrl tvUrl = JSON.parseObject(result, TVUrl.class);
+				return tvUrl;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return null;
+	}
+}

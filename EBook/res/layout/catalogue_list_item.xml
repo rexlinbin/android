@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_catalogue"
+    android:background="@drawable/catalogue_selector"
+    android:layout_width="match_parent"
+    android:layout_height="50dp" >
+    
+    <ImageView 
+        android:id="@+id/iv_cur_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/select"
+        android:visibility="gone"/>
+    
+    <!-- <TextView 
+        android:id="@+id/catalogue_order"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:textSize="15sp"
+        android:textColor="#555555"
+        android:text="第一章"
+        android:layout_marginLeft="20dp"/> -->
+    
+    <TextView 
+        android:id="@+id/catalogue_name"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:singleLine="true"
+        android:textSize="15sp"
+        android:textColor="#555555"
+        android:gravity="center_vertical"/>
+
+</RelativeLayout>

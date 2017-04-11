@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f2f2f2"
+     >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+       android:background="#ff3746"  >
+
+        <ImageView
+            android:id="@+id/fragment_search_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/sousuo" />
+
+        <EditText
+            android:id="@+id/fragment_search_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/fragment_search_image"
+            android:background="@drawable/search_bg"
+            android:hint="请输入搜索内容"
+          android:textColorHint = "#fff"         
+            android:textSize="13sp" 
+            android:textColor="#fff"
+            android:singleLine="true"
+            android:imeOptions="actionSearch"
+            />
+    </RelativeLayout>
+ <com.bccv.boxcomic.view.KeywordsFlow
+        android:id="@+id/keywordsflow"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:focusableInTouchMode="true"
+        android:layout_marginBottom="20dp"
+       />
+</LinearLayout>

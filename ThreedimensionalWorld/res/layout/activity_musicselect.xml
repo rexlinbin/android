@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:background="@drawable/bandstand_bg"
+    >
+       
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    
+    
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="fill_parent" 
+        android:layout_centerInParent="true"
+        >
+
+        <Button
+            android:id="@+id/musicselect_local"
+            android:layout_width="150dp"
+            android:layout_height="378dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/musicselect_localselect"
+            android:onClick="onLocalClick" />
+
+        <Button
+            android:id="@+id/musicselect_music"
+           android:layout_width="150dp"
+            android:layout_height="378dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/musicselect_local"
+            android:background="@drawable/musicselect_music"
+            android:onClick="onMusicClick" />
+    </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
+
+
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+     android:background="@drawable/bandstand_bg"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    
+    
+    <RelativeLayout
+       android:layout_width="350dp"
+        android:layout_height="fill_parent" 
+        android:layout_centerInParent="true"
+        >
+
+        <Button
+            android:id="@+id/musicselect_local1"
+           android:layout_width="150dp"
+            android:layout_height="378dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/musicselect_localselect"
+            android:onClick="onLocalClick" />
+
+        <Button
+            android:id="@+id/musicselect_music1"
+            android:layout_width="150dp"
+            android:layout_height="378dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/musicselect_local1"
+            android:background="@drawable/musicselect_music"
+            android:onClick="onMusicClick" 
+            
+            />
+    </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/comicInfo_localLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="195dp" >
+
+        <ImageView
+            android:id="@+id/titlebg_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@color/white"
+            android:scaleType="fitStart" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="#8f000000"
+            android:scaleType="fitStart" />
+
+        <RelativeLayout
+            android:id="@+id/back_relativeLayout"
+            android:layout_width="70dp"
+            android:layout_height="48dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/back_xq" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/back_relativeLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp" >
+
+            <ImageView
+                android:id="@+id/comicImage_imageView"
+                android:layout_width="80dp"
+                android:layout_height="105dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/view_default"
+                android:scaleType="fitXY" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/comicTitle_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="灌篮高手"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp" >
+
+                    <TextView
+                        android:id="@+id/comicAuthor_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxEms="8"
+                        android:singleLine="true"
+                        android:text="作者：佚名"
+                        android:textColor="#8fffffff"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/lookNum_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:singleLine="true"
+                        android:text="浏览量：11111"
+                        android:textColor="#8fffffff"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp" >
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/circular_corner_left"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="资源站"
+                        android:textColor="#fff"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/comicFrom_textView"
+                        android:layout_width="125dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/circular_corner_right"
+                        android:drawableRight="@drawable/arrow_select"
+                        android:gravity="center"
+                        android:maxEms="5"
+                        android:paddingRight="10dp"
+                        android:singleLine="true"
+                        android:text="动漫之家"
+                        android:textColor="#fff"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" >
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp" >
+
+        <TextView
+            android:id="@+id/read_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/button_read"
+            android:gravity="center"
+            android:text="开始阅读"
+            android:textColor="#fff"
+            android:textSize="15sp" />
+
+        <RelativeLayout
+            android:id="@+id/download_relativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_down_local"
+                android:gravity="center"
+                android:text="下载到本地"
+                android:textColor="@drawable/down_local_text"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dp" >
+
+            <LinearLayout
+                android:id="@+id/comicInfo_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/comicContent_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15sp"
+                        android:lineSpacingExtra="5dp"
+                        android:text="TextViewasdfasdflkjsadf;laksdjfpoiwuerlkasjdfashd;fkjnaksjdfhgpaosdijf"
+                        android:textColor="#999" />
+
+                    <ImageView
+                        android:id="@+id/zhankai_imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15sp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/imageview_zhankai" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:gravity="center" >
+
+                    <TextView
+                        android:id="@+id/collect_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="6dp"
+                        android:drawableTop="@drawable/textview_collect"
+                        android:gravity="center"
+                        android:text="收藏"
+                        android:textColor="#999"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/zan_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="6dp"
+                        android:drawableTop="@drawable/textview_great"
+                        android:gravity="center"
+                        android:text="顶（110）"
+                        android:textColor="#999"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/comment_textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="6dp"
+                        android:drawableTop="@drawable/textview_comment"
+                        android:gravity="center"
+                        android:text="吐槽（123）"
+                        android:textColor="#999"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/graywhite"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15sp" >
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="漫画章节目录"
+                        android:textColor="#999"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/updateTime_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="最近更新：12.05"
+                        android:textColor="#bbb"
+                        android:textSize="9sp" />
+                </LinearLayout>
+
+                <com.bccv.boxcomic.tool.MyGridView
+                    android:id="@+id/chapter_gridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:numColumns="4"
+                    android:verticalSpacing="5dp" >
+                </com.bccv.boxcomic.tool.MyGridView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+   public *;
+}
+
+-libraryjars libs/Android_SDK.jar
+-libraryjars libs/android-support-v4.jar
+-libraryjars libs/fastjson-1.1.15.jar
+-libraryjars libs/libammsdk.jar
+-libraryjars libs/mta-sdk-1.6.2.jar
+-libraryjars libs/open_sdk_r3922.jar
+-libraryjars libs/reportSDK.jar
+-libraryjars libs/universal-image-loader-1.9.4.jar
+-libraryjars libs/weibosdkcore.jar
+-libraryjars libs/xUtils-2.6.8.jar
+
+
+-keep class com.jeremyfeinstein.slidingmenu.lib.**{*;}
+-keep class com.boxuu.gamebox.ui.view.**{*;}
+
+-keep class com.boxuu.gamebox.model.**{
+	public *;
+}
+
+-keepclasseswithmembernames class * { 
+native <methods>;
+}
+-keepclasseswithmembers class * { 
+public <init>(android.content.Context, android.util.AttributeSet);
+}
+-keepclasseswithmembers class * {
+public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+-keepclassmembers class * extends android.app.Activity {
+public void *(android.view.View);
+}
+
+-keep public class * implements java.io.Serializable {
+        public *;
+}
+ 
+ -keepclassmembers class **.R$* {
+    public static <fields>;
+}
+ -keep class com.boxuu.gamebox.R$*{*;}
+ 
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+ 
+-dontwarn android.support.**
+-dontwarn com.alibaba.fastjson.**
+-dontwarn com.awt.**
+
+-keepclassmembers enum * {
+public static **[] values();
+public static ** valueOf(java.lang.String);
+}
+-keep class * implements android.os.Parcelable {
+public static final android.os.Parcelable$Creator *;
+}
+-keepattributes Signature
+

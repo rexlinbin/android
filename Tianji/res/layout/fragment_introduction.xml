@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+          android:layout_marginBottom="50dp"
+          android:scrollbars="none"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <GridView
+                android:id="@+id/introduction_gridView"
+                android:layout_width="fill_parent"
+                android:layout_height="220dp"
+                android:layout_margin="7.5dp"
+                android:horizontalSpacing="15dp"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:verticalSpacing="15dp" >
+            </GridView>
+
+            <TextView
+                android:id="@+id/introduction_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/introduction_gridView"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="15dp"
+                android:text="应用描述"
+                android:textColor="#333"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/introduction_describe"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/introduction_text"
+              
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:textColor="#666"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/introduction_re"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="#fff" >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="195dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:max="100"
+            android:progress="100"
+            android:progressDrawable="@drawable/downloadbar" />
+
+        <TextView
+            android:id="@+id/downText"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="下载"
+            android:textColor="#fff" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@id/introduction_re"
+        android:background="#ddd" />
+
+</RelativeLayout>

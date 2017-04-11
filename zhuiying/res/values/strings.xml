@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">追影</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 设置 -->
+    <string name="setting_friends">推荐给好友</string>
+    <string name="setting_score">去评分</string>
+    <string name="setting_about">关于我们</string>
+    <string name="setting_feedback">意见反馈</string>
+    <string name="setting_version">升级最新版本</string>
+    <string name="setting_clear">清空缓存</string>
+    <string name="setting_logout">退出登录</string>
+    <string name="setting_new">已是最新版本</string>
+    <string name="setting_wifi">仅在wifi下播放</string>
+    
+     <string name="setting_tui">推送开关</string>
+     
+       <string name="setting_zhan">复制链接</string>
+       <string name="iswifi_bofang">继续播放</string>
+         <string name="setting_ci">播放链接</string>
+     
+</resources>

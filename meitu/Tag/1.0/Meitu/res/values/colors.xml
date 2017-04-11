@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <!-- weixindialog -->
+    <color name="weixin_bt_pressed_color">#282a2b</color>
+    <color name="weixin_bt_unpress_color">#303537</color>
+    <color name="dialog_bg_clicked">#eeeeee</color>
+    <color name="dialog_bg_unclick">#ffffff</color>
+</resources>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee" >
+    
+    <RelativeLayout
+        android:id="@+id/upload_title"
+	    android:layout_width="fill_parent"
+	    android:layout_height="48dp"
+	    android:background="#333333" >
+
+	    <LinearLayout 
+			android:id="@+id/left_buton"
+	        android:layout_width="wrap_content"
+		    android:layout_height="fill_parent"
+		    android:layout_centerVertical="true"
+		   	android:layout_alignParentLeft="true"
+		   	android:gravity="center"
+		   	android:paddingLeft="15dp"
+		   	android:paddingRight="15dp">
+			<ImageView
+			    android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content" 
+		    	android:background="@drawable/title_back_button_selector"
+		    	android:duplicateParentState="true"
+		    	android:contentDescription="@null"/>
+	        </LinearLayout>
+	        
+	    <ImageView 
+			android:id="@+id/right_buton"
+	        android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerVertical="true"
+		   	android:layout_alignParentRight="true"
+		   	android:background="@drawable/select_right_btn_selector"
+		   	android:layout_marginRight="15dp"
+		   	android:visibility="visible" 
+		   	android:contentDescription="@null">
+	     </ImageView>
+		
+		<TextView 
+		    android:id="@+id/title_text"
+		  	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+		    android:layout_centerInParent="true"
+		    android:textSize="20sp"
+		    android:textColor="#ffffff"
+		    android:text="title"/>
+	
+	</RelativeLayout>
+    
+        <ScrollView 
+        	android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_below="@id/upload_title"
+		    android:scrollbars="none">
+		
+            <LinearLayout 
+                android:layout_width="fill_parent"
+		    	android:layout_height="wrap_content"
+		    	android:orientation="vertical" >
+			
+			   <com.bccv.meitu.view.ReGridView 
+			        android:id="@+id/pic_gv"
+			       	android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+			        android:layout_marginTop="25dp"
+			        android:padding="7.5dp"
+			        android:background="#ffffff"
+			        android:numColumns="3"
+			        android:scrollbars="none"
+			        android:fadingEdge="none"
+			        android:fadingEdgeLength="@null"
+			   	    android:verticalSpacing="7.5dp" 
+			   	    android:horizontalSpacing="7.5dp"
+			   	    android:listSelector="#00000000"/>
+			    
+			   	<EditText
+			       android:id="@+id/description_et"
+			       android:layout_width="fill_parent"
+			       android:layout_height="wrap_content"
+			       android:layout_marginTop="25dp"
+			       android:padding="15dp"
+			       android:background="@android:color/white"
+			       android:hint="给自己写点什么..."
+			       android:textColorHint="#dbdbdb"
+			       android:textColor="#000000"
+			       android:textSize="15sp" />
+			   	
+			   	<LinearLayout 
+			   	   android:layout_width="fill_parent"
+			       android:layout_height="wrap_content"
+			       android:orientation="horizontal"
+			       android:layout_marginTop="15dp"
+			       android:layout_marginBottom="150dp"
+			       android:gravity="center_vertical"
+			       android:clickable="true">
+			   	    
+			   	    <LinearLayout 
+			   	       android:id="@+id/upload_cb_parent"
+			   	       android:layout_width="wrap_content"
+			       	   android:layout_height="wrap_content"
+			       	   android:paddingLeft="15dp"
+			       	   android:paddingRight="10dp">
+				   	     <CheckBox 
+				   	        android:id="@+id/upload_cb"
+				   	    	android:layout_width="15dp"
+				       		android:layout_height="15dp"
+				       		android:checked="true"
+				       		android:button="@drawable/upload_cb_selector"
+				       		android:duplicateParentState="true"/>   
+			   	    </LinearLayout>
+			   	    
+			   	    <TextView
+			   	        android:id="@+id/upload_clause"
+			   	        android:layout_width="wrap_content"
+			       		android:layout_height="wrap_content"
+			   	        android:text="我已同意悦色平台图片上传条款" 
+			   	        android:textSize="13sp"
+			   	        android:textColor="#999999"/>
+			   	    
+			   	</LinearLayout>
+			   	
+                
+            </LinearLayout>
+       	 </ScrollView>
+    
+   	  <include 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/upload_title"
+        layout="@layout/common_waiting"
+        android:focusable="true" />
+
+</RelativeLayout>

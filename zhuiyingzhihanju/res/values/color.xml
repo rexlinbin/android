@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+   <color name="white">#ffffff</color>
+   <color name="halfwhite">#00ffffff</color>
+  <color name="black">#000000</color>
+  <color name="gray">#e6e6e6</color>
+  <color name="darkgray">#9c9c9c</color>
+  <color name="green">#7ac057</color>
+  <color name="numgray">#bbb</color>
+  <color name="numred">#ff6c78</color>
+  <color name="numyellow">#ff9b6f</color>
+  <!-- setting -->
+    <drawable name="item">#ffffff</drawable>
+    <drawable name="item_press">#f5f5f5</drawable>
+   
+    <color name="light_white">#bfbfbf</color>
+    <color name="blue_50">#804a90e2</color>
+    
+    <color name="popuBg">#bb000000</color>
+    <color name="dark">#333</color>
+</resources>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_root" >
+    
+    <com.bccv.strategy.ui.view.BackGroundView 
+        android:layout_width="fill_parent"
+        android:id="@+id/personal_bg_view"
+        android:layout_height="match_parent"/>
+
+    <include
+        android:id="@+id/personal_title"
+        layout="@layout/common_title" />
+
+    <RelativeLayout
+        android:layout_below="@id/personal_title"
+        android:layout_width="fill_parent"
+        android:id="@+id/rl_portrait"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/setting_item_selector"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/change_portrait"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+        
+        <ImageView 
+            android:id="@+id/iv_portrait"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_centerVertical="true"
+            android:padding="2dp"
+            android:background="@drawable/usericon_background"
+            android:src="@drawable/head_default"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_below="@id/rl_portrait"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="30dp"
+        android:id="@+id/rl_nick"
+        android:background="@drawable/setting_item_selector"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/nick"
+            android:textColor="#80ffffff"
+            android:textSize="16sp" />
+        
+        <TextView 
+            android:id="@+id/tv_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:text="@string/default_nick"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp" />
+        
+        <EditText 
+            android:id="@+id/et_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:textColor="#ffffff"
+            android:background="@android:color/transparent"
+            android:text="@string/default_nick"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/rl_nick"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/setting_item_selector"
+        android:id="@+id/rl_signature"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/signature"
+            android:textColor="#80ffffff"
+            android:textSize="15sp" />
+        
+        <TextView 
+            android:id="@+id/tv_signature"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:text="@string/default_sign"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp" />
+        
+        <EditText 
+            android:id="@+id/et_signature"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:background="@android:color/transparent"
+            android:textColor="#ffffff"
+            android:text="@string/default_sign"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp" />
+	</RelativeLayout>
+	
+    <View 
+        android:id="@+id/other"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rl_signature"/>
+    
+    <include 
+        android:id="@+id/waitting"
+        layout="@layout/common_loading"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>"
+</RelativeLayout>

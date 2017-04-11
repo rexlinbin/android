@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/app_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/app_relative"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <com.bccv.threedimensionalworld.view.MyTitleView
+                android:id="@+id/left_myTitleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="-60dp" />
+
+            <RelativeLayout
+                android:id="@+id/left_relativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" >
+
+                <Button
+                    android:id="@+id/app_video"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="205dp"
+                    android:background="@drawable/app_video"
+                    android:onClick="onVedioClick" />
+
+                <Button
+                    android:id="@+id/app_ebook"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="210dp"
+                    android:background="@drawable/app_ebook"
+                    android:onClick="onEbookClick" />
+
+                <Button
+                    android:id="@+id/app_music"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="105dp"
+                    android:background="@drawable/app_music"
+                    android:onClick="onMusicClick" />
+
+                <Button
+                    android:id="@+id/app_life"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="105dp"
+                    android:layout_marginTop="210dp"
+                    android:background="@drawable/app_life"
+                    android:onClick="onLifeClick" />
+
+                <Button
+                    android:id="@+id/app_child"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="210dp"
+                    android:background="@drawable/app_child"
+                    android:onClick="onChildClick" />
+
+                <Button
+                    android:id="@+id/app_education"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="210dp"
+                   android:layout_marginTop="210dp"
+                    android:background="@drawable/app_education"
+                    android:onClick="onEducationClick" />
+
+                <Button
+                    android:id="@+id/app_health"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="315dp"
+                    android:background="@drawable/app_health"
+                    android:onClick="onHealClick" />
+
+                <Button
+                    android:id="@+id/app_news"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="315dp"
+                    android:layout_marginTop="210dp"
+                    android:background="@drawable/app_news"
+                    android:onClick="onNewsClick" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/app_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/app_relative1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <com.bccv.threedimensionalworld.view.MyTitleView
+                android:id="@+id/right_myTitleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="-60dp" />
+
+            <RelativeLayout
+                android:id="@+id/right_relativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" >
+
+                <Button
+                    android:id="@+id/app_video1"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="205dp"
+                    android:background="@drawable/app_video"
+                    android:onClick="onVedioClick" />
+
+                <Button
+                    android:id="@+id/app_ebook1"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_alignParentLeft="true"
+                  android:layout_marginTop="210dp"
+                    android:background="@drawable/app_ebook"
+                    android:onClick="onEbookClick" />
+
+                <Button
+                    android:id="@+id/app_music1"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="105dp"
+                    android:background="@drawable/app_music"
+                    android:onClick="onMusicClick" />
+
+                <Button
+                    android:id="@+id/app_life1"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="105dp"
+                    android:layout_marginTop="210dp"
+                    android:background="@drawable/app_life"
+                    android:onClick="onLifeClick" />
+
+                <Button
+                    android:id="@+id/app_child1"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="210dp"
+                    android:background="@drawable/app_child"
+                    android:onClick="onChildClick" />
+
+                <Button
+                    android:id="@+id/app_education1"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="210dp"
+                   android:layout_marginTop="210dp"
+                    android:background="@drawable/app_education"
+                    android:onClick="onEducationClick" />
+
+                <Button
+                    android:id="@+id/app_health1"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="315dp"
+                    android:background="@drawable/app_health"
+                    android:onClick="onHealClick" />
+
+                <Button
+                    android:id="@+id/app_news1"
+                    android:layout_width="143dp"
+                    android:layout_height="286dp"
+                    android:layout_marginLeft="315dp"
+                  android:layout_marginTop="210dp"
+                    android:background="@drawable/app_news"
+                    android:onClick="onNewsClick" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

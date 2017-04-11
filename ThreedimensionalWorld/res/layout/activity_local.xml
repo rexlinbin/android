@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/leftbg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/local_video"
+                        android:layout_width="150dp"
+                        android:layout_height="300dp"
+                        android:background="@drawable/local_videoselect"
+                        android:onClick="onVideoClick" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/local_music"
+                        android:layout_width="150dp"
+                        android:layout_height="300dp"
+                        android:background="@drawable/local_musicselect"
+                        android:onClick="onMusicClick" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/local_picture"
+                        android:layout_width="150dp"
+                        android:layout_height="300dp"
+                        android:background="@drawable/local_picselect"
+                        android:onClick="onPicClick" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upan_layout"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone" >
+                    <Button
+                        android:id="@+id/local_Upan"
+                        android:layout_width="150dp"
+                        android:layout_height="300dp"
+                        android:background="@drawable/local_upanselect"
+                        android:onClick="onUpanClick" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/leftbg"
+        android:orientation="vertical"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:descendantFocusability="blocksDescendants" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/local_video1"
+                        android:layout_width="150dp"
+                        android:layout_height="300dp"
+                        android:background="@drawable/local_videoselect"
+                        android:onClick="onVideoClick" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/local_music1"
+                        android:layout_width="150dp"
+                        android:layout_height="300dp"
+                        android:background="@drawable/local_musicselect"
+                        android:onClick="onMusicClick" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center" >
+
+                    <Button
+                        android:id="@+id/local_picture1"
+                        android:layout_width="150dp"
+                        android:layout_height="300dp"
+                        android:background="@drawable/local_picselect"
+                        android:onClick="onPicClick" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/upan_layout1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone" >
+                    <Button
+                        android:id="@+id/local_Upan1"
+                        android:layout_width="150dp"
+                        android:layout_height="300dp"
+                        android:background="@drawable/local_upanselect"
+                        android:onClick="onUpanClick" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

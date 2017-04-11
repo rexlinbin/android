@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:id="@+id/ll_title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="#000000"
+        >
+        <ImageView 
+            android:id="@+id/album_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/title_back_button_selector"/>
+        <ImageView 
+            android:id="@+id/album_share"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="13dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/title_share_button_selector"/>
+        <TextView 
+            android:id="@+id/album_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:text="@string/album_name"/>
+    </RelativeLayout>
+	
+	<com.bccv.meitu.view.PullToZoomListView 
+	    android:id="@+id/list_view"
+	    android:layout_below="@id/ll_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"
+        android:dividerHeight="0dp"
+        custom:listHeadView="@layout/album_zoom_view">
+	    
+	</com.bccv.meitu.view.PullToZoomListView>
+	<include 
+	    layout="@layout/common_waiting"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"/>
+</RelativeLayout>

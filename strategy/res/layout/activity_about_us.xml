@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.bccv.strategy.ui.view.BackGroundView
+        android:id="@+id/background_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <include
+        android:id="@+id/about_us_title"
+        layout="@layout/common_second_title" />
+
+    <WebView
+        android:id="@+id/about_us_web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/about_us_title"
+        android:background="@android:color/white" />
+
+    <include
+        android:id="@+id/about_us_loading"
+        android:layout_below="@id/about_us_title"
+        layout="@layout/common_loading" />
+
+</RelativeLayout>

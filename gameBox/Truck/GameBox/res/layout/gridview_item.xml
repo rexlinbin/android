@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_root" >
+
+    <ImageView 
+        android:id="@+id/game_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@null"/>
+    
+    <TextView 
+        android:id="@+id/game_name"
+        android:layout_width="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/game_logo"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="13sp"
+        android:textColor="#555555"
+        android:text="大卡车吃小卡车"
+        android:singleLine="true"/>
+    
+    <ProgressBar 
+        android:id="@+id/game_pro"
+        android:layout_below="@id/game_name"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp" 
+        style="?android:attr/progressBarStyleHorizontal"
+        android:background="@null"
+        android:layout_centerHorizontal="true"
+        android:progressDrawable="@drawable/progress_bg"/>
+    
+    <TextView 
+        android:id="@+id/game_state"
+        android:layout_below="@id/game_name"
+        android:layout_width="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp" 
+	    android:textColor="#ffffff"
+	    android:textSize="15sp"
+	    android:gravity="center"
+	    android:text="下载" />    
+</RelativeLayout>

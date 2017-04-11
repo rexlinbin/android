@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="50dp" >
+           <ImageView
+            android:id="@+id/localvideo_imageView1"
+            android:layout_width="170dp"
+            android:layout_height="340dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/local_imageitemselect" />
+  <ImageView
+            android:id="@+id/localvideo_imageView"
+            android:layout_width="160dp"
+            android:layout_height="320dp"
+            android:layout_centerInParent="true"
+          android:scaleType="fitXY"
+           />
+     
+
+      
+
+        <TextView
+            android:id="@+id/localvideo_item_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/localvideo_imageView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="30dp"
+            android:singleLine="true"
+            android:text="相依相偎"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="90dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/local_player" />
+    </RelativeLayout>
+
+</LinearLayout>

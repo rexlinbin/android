@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000" >
+
+        <LinearLayout
+            android:id="@+id/left_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/leftbg" />
+
+                <TextView
+                    android:id="@+id/left_status_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="未连接"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+
+                <com.bccv.threedimensionalworld.tool.MyDigitalClock
+                    android:id="@+id/left_digitalClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/left_status_textView"
+                    android:text="DigitalClock"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:id="@+id/left_relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+
+                    <Button
+                        android:id="@+id/left_userhistory_Button"
+                        android:layout_width="247.5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="100dp"
+                        android:background="@drawable/movieuser_history" />
+
+                    <Button
+                        android:id="@+id/left_usercollect_Button"
+                        android:layout_width="247.5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/movieuser_collect" />
+
+                    <Button
+                        android:id="@+id/left_userdownload_Button"
+                        android:layout_width="247.5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="100dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/movieuser_download" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/right_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/rightbg" />
+
+                <TextView
+                    android:id="@+id/right_status_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="未连接"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+
+                <com.bccv.threedimensionalworld.tool.MyDigitalClock
+                    android:id="@+id/right_digitalClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/right_status_textView"
+                    android:text="DigitalClock"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+
+                <RelativeLayout
+                    android:id="@+id/right_relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+
+                    <Button
+                        android:id="@+id/right_userhistory_Button"
+                        android:layout_width="247.5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="100dp"
+                        android:background="@drawable/movieuser_history" />
+
+                    <Button
+                        android:id="@+id/right_usercollect_Button"
+                        android:layout_width="247.5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/movieuser_collect" />
+
+                    <Button
+                        android:id="@+id/right_userdownload_Button"
+                        android:layout_width="247.5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="100dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/movieuser_download" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="10dp" >
+
+        <ImageView
+            android:id="@+id/item_iv_icon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/home_headpic_9"
+            android:contentDescription="@string/pic_description"
+            android:padding="2dp"
+            android:src="@drawable/ic_img_user_default" />
+
+        <TextView
+            android:id="@+id/item_comment_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/item_iv_icon"
+            android:text="@string/comment_name"
+            android:textColor="#333333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/item_tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_comment_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/item_iv_icon"
+            android:text="@string/example_comment"
+            android:textColor="#666666"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/item_tv_album_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="1小时前"
+            android:textColor="#999999"
+            android:textSize="10sp" />
+        
+        <ImageView 
+            android:id="@+id/item_see_more"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_tv_comment"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/more_pinglun"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

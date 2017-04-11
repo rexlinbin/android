@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/frament_home_item_tag"
+        android:layout_width="fill_parent"
+        android:layout_height="12dp"
+        android:background="#f2f2f2" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/frament_home_item_image"
+            android:layout_width="100dp"
+            android:layout_height="135dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/frament_home_default"
+            android:scaleType="fitXY" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.2" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/frament_home_item_titleTag"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:singleLine="true"
+                android:text="一千零九夜"
+                android:textColor="#777"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/frament_home_item_updateTAg"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                android:text="一千零九夜"
+                android:textColor="#ababab"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_cancel">取消</string>
+    <string name="update_sure">更新</string>
+    <string name="update_title">APP更新提示</string>
+    <string name="update_ask">是否更新？</string>
+    
+</resources>

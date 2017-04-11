@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.bccv.tianji"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#585E72" >
+
+        <ImageButton
+            android:id="@+id/Back"
+           android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/selector_mycomments_back" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="个人信息修改"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+<com.utils.views.CircleImageView
+        android:id="@+id/update_ImageIcon"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+       />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="昵称："
+            android:textColor="#99ffffff"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/update_NameEdit"
+            android:layout_width="245dp"
+            android:layout_height="41dp"
+            android:background="@drawable/regist_userinfo_bg"
+            android:paddingLeft="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
+        android:text="不超过12个字符，中英文均可"
+        android:textColor="#99ffffff"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/update_btn"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/logbtn_selector"
+        android:text="修改"
+        android:onClick="onUpdateClick"
+        android:textColor="#fff"
+        android:textSize="14sp" />
+
+</LinearLayout>

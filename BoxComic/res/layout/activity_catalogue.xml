@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <include 
+        layout="@layout/common_title"
+        android:id="@+id/common_title_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+    
+    <ListView 
+        android:id="@+id/lv_catalogue"
+        android:layout_below="@id/common_title_id"
+        android:fastScrollEnabled="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="45dp" >
+
+        <ProgressBar
+            android:id="@+id/download_progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:focusable="false"
+            android:progress="0"
+            android:progressDrawable="@drawable/progressbar_ebook_download" />
+
+        <TextView
+            android:id="@+id/download_textView"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="缓存" />
+
+    </RelativeLayout>
+        
+</RelativeLayout>

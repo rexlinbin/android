@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/left_inputkey_0_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:gravity="center"
+                android:text="q"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_1_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_0_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="w"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_2_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_1_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="e"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_3_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_2_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="r"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_4_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_3_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="t"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_5_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_4_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="y"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_6_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_5_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="u"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_7_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_6_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="i"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_8_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_7_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="o"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_9_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_8_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="p"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/left_inputkey_10_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:gravity="center"
+                android:text="a"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_11_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_10_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="s"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_12_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_11_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="d"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_13_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_12_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="f"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_14_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_13_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="g"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_15_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_14_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="h"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_16_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_15_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="j"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_17_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_16_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="k"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_18_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_17_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="l"
+                android:textColor="#000"
+                android:textSize="48sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/left_sizekey_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_size"
+                android:nextFocusRight="@+id/left_inputkey_20_button"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_20_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_sizekey_button"
+                android:layout_marginLeft="-82dp"
+                android:gravity="center"
+                android:text="z"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_21_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_20_button"
+                android:layout_marginLeft="-62dp"
+                android:nextFocusLeft="@+id/left_inputkey_20_button"
+                android:gravity="center"
+                android:text="x"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_22_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_21_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="c"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_23_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_22_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="v"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_24_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_23_button"
+                android:layout_marginLeft="-62dp"
+                android:nextFocusDown="@+id/left_blankkey_button"
+                android:gravity="center"
+                android:text="b"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_25_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_24_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="n"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_inputkey_26_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_key"
+                android:layout_toRightOf="@+id/left_inputkey_25_button"
+                android:nextFocusRight="@+id/left_deletekey_button"
+                android:layout_marginLeft="-62dp"
+                android:gravity="center"
+                android:text="m"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_deletekey_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_delete"
+                android:layout_toRightOf="@+id/left_inputkey_26_button"
+                android:nextFocusLeft="@+id/left_inputkey_26_button"
+                android:layout_marginLeft="-83dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="48sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/left_functionkey_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_function"
+                android:nextFocusRight="@+id/left_blankkey_button"
+                android:gravity="center"
+                android:text="123"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_surekey_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_function"
+                android:layout_toRightOf="@+id/left_blankkey_button"
+                android:layout_marginLeft="-258dp"
+                android:nextFocusLeft="@+id/left_blankkey_button"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_quitkey_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboard_quit"
+                 android:layout_toRightOf="@+id/left_surekey_button"
+                android:layout_marginLeft="-102dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+            <Button
+                android:id="@+id/left_blankkey_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="-40dp"
+                android:background="@drawable/keyboard_blank"
+                android:nextFocusLeft="@+id/left_functionkey_button"
+                android:nextFocusRight="@+id/left_surekey_button"
+                android:text="空格"
+                android:textColor="#000"
+                android:textSize="48sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

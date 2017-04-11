@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+    android:background="@drawable/qidong_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                android:id="@+id/blue_re"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@color/burlywood" >
+
+                <TextView
+                    android:id="@+id/blue_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="蓝牙"
+                    android:textColor="#ffffff" />
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/blue_re"
+                android:layout_marginBottom="50dp" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <RelativeLayout
+                        android:id="@+id/blue_re1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp" >
+
+                        <TextView
+                            android:id="@+id/boule_isCloseText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:text="开启蓝牙"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/blueTooth_close"
+                            android:layout_width="41dp"
+                            android:layout_height="21dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/set_close"
+                            android:onClick="onClick" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/blue_re2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/blue_re1" >
+
+                        <TextView
+                            android:id="@+id/buleTooth_isJianCETExt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="开放检测"
+                              android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/blueTooth_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/buleTooth_isJianCETExt"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:text="开放检测"
+                            android:textColor="#bbb"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/buleTooth_jiance_close"
+                            android:layout_width="41dp"
+                            android:layout_height="21dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/set_close"
+                            android:onClick="onClickJian"
+                            android:textOff=""
+                            android:textOn="" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/blue_re3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/blue_re2"
+                        android:onClick="onGoClick" >
+
+                        <TextView
+                            android:id="@+id/boule_nameText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:text="设备名称"
+                              android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/blueTooth_go"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/go" />
+
+                        <TextView
+                            android:id="@+id/bluetooth_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@id/blueTooth_go"
+                            android:textColor="#bbb"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/bluetooth_Editname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@id/blueTooth_go"
+                            android:textColor="#bbb"
+                            android:textSize="11sp"
+                            android:visibility="invisible" />
+                    </RelativeLayout>
+
+                    <com.bccv.threedimensionalworld.tool.MyListView
+                        android:id="@+id/buletooth_list"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_below="@id/blue_re3" >
+                    </com.bccv.threedimensionalworld.tool.MyListView>
+                </RelativeLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/bluetooth_search"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:onClick="onSearchClick"
+                android:text="搜索" />
+        </RelativeLayout>
+    </LinearLayout>
+<View 
+    android:layout_width="0.5dp"
+    android:layout_height="fill_parent"
+    android:background="@drawable/line"
+    
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+         android:background="@drawable/qidong_bg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                android:id="@+id/blue_re5"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@color/burlywood" >
+
+                <TextView
+                 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="蓝牙"
+                    android:textColor="#ffffff" />
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/blue_re5"
+                android:layout_marginBottom="50dp" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+
+                    <RelativeLayout
+                        android:id="@+id/blue_re6"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp" >
+
+                        <TextView
+                            android:id="@+id/boule_isCloseText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:text="开启蓝牙"
+                              android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/blueTooth_close1"
+                            android:layout_width="41dp"
+                            android:layout_height="21dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/set_close"
+                            android:onClick="onClick" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/blue_re7"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/blue_re6" >
+
+                        <TextView
+                            android:id="@+id/buleTooth_isJianCETExt1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="开放检测"
+                              android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/blueTooth_time1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/buleTooth_isJianCETExt1"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:text="开放检测"
+                            android:textColor="#bbb"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/buleTooth_jiance_close1"
+                            android:layout_width="41dp"
+                            android:layout_height="21dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/set_close"
+                            android:onClick="onClickJian"
+                            android:textOff=""
+                            android:textOn="" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/blue_re8"
+                        android:layout_width="fill_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/blue_re7"
+                        android:onClick="onGoClick" >
+
+                        <TextView
+                            android:id="@+id/boule_nameText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:text="设备名称"
+                              android:textColor="@color/white"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/blueTooth_go1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/go" />
+
+                        <TextView
+                            android:id="@+id/bluetooth_name1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@id/blueTooth_go1"
+                            android:textColor="#bbb"
+                            android:textSize="11sp" />
+
+                        <EditText
+                            android:id="@+id/bluetooth_Editname1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_toLeftOf="@id/blueTooth_go1"
+                            android:textColor="#bbb"
+                            android:textSize="11sp"
+                            android:visibility="invisible" />
+                    </RelativeLayout>
+
+                    <com.bccv.threedimensionalworld.tool.MyListView
+                        android:id="@+id/buletooth_list1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_below="@id/blue_re8" >
+                    </com.bccv.threedimensionalworld.tool.MyListView>
+                </RelativeLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/bluetooth_search1"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:onClick="onSearchClick"
+                android:text="搜索" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

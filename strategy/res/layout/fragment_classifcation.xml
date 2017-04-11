@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/classifcation_title"
+        layout="@layout/common_title" />
+
+    <GridView
+        android:id="@+id/classifcation_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/classifcation_title"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:horizontalSpacing="0dp"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="4"
+        android:scrollbars="none"
+        android:smoothScrollbar="true"
+        android:verticalSpacing="0dp" />
+
+    <include
+        android:id="@+id/classifcation_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/classifcation_title"
+        layout="@layout/common_loading" />
+
+    <include
+        android:id="@+id/classifcation_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/classifcation_title"
+        layout="@layout/common_error"
+        android:visibility="gone" />
+
+</RelativeLayout>

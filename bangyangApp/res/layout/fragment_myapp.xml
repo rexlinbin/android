@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/myapp_title"
+        layout="@layout/common_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/myapp_title"
+        android:background="@android:color/white" />
+
+    <RelativeLayout
+        android:id="@+id/myapp_classification_rl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/myapp_title"
+        android:background="#f6f6f6" >
+
+        <TextView
+            android:id="@+id/classification_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="@string/local_app"
+            android:textColor="#999999"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/myapp_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/app_refresh_btn_selector"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/myapp_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/myapp_classification_rl"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="4"
+        android:scrollbars="none"
+        android:smoothScrollbar="true" />
+
+    <include
+        android:id="@+id/myapp_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/myapp_title"
+        layout="@layout/common_loading"
+        android:visibility="visible" />
+
+    <include
+        android:id="@+id/myapp_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/myapp_title"
+        layout="@layout/common_error"
+        android:visibility="gone" />
+
+</RelativeLayout>

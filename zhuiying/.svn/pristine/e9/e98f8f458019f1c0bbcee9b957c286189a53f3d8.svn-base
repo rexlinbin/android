@@ -1,0 +1,39 @@
+package com.bccv.zhuiying.model;
+
+
+public class UpdateInfo {
+	/**
+	 * info 升级信息 当status=1时有 info.ver 升级后的版本名称 info.upver 升级后的版本升级号 info.downurl
+	 * 升级的apk包地址 info.updes 升级描述，换行用 \n info.need 0 非强制升级 1 强制升级
+	 */
+	String des_ver;
+	String down_url;
+	String des;
+	int upver;
+	
+	public int getUpver() {
+		return upver;
+	}
+	public void setUpver(int upver) {
+		this.upver = upver;
+	}
+	public String getDes_ver() {
+		return des_ver;
+	}
+	public void setDes_ver(String des_ver) {
+		this.des_ver = des_ver;
+	}
+	public String getDown_url() {
+		return down_url;
+	}
+	public void setDown_url(String down_url) {
+		this.down_url = down_url;
+	}
+	public String getDes() {
+		return des;
+	}
+	public void setDes(String des) {
+		this.des = des;
+	}
+	
+}

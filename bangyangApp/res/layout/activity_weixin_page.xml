@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:background="#303537">
+    
+    <TextView 
+        android:id="@+id/wx_title_tv"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:textColor="#43b81c"  
+    	android:layout_marginLeft="10dp"
+    	android:layout_marginTop="15dp"
+    	android:layout_marginBottom="15dp"
+    	android:textSize="18sp"
+    	android:text="微信分享"
+        />
+    <View 
+        android:layout_width="match_parent"
+    	android:layout_height="0.8dp"
+    	android:background="#43b81c"
+        />
+    <TextView 
+        android:id="@+id/wx_content_tv"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_marginTop="15dp"
+    	android:layout_marginBottom="15dp"
+    	android:gravity="center"
+    	android:textSize="18sp"
+    	android:text="分享成功"
+    	android:textColor="#43b81c" 
+        />
+    <View 
+        android:layout_width="match_parent"
+    	android:layout_height="0.8dp"
+    	android:background="#282a2b"
+        />
+    <TextView 
+        android:id="@+id/wx_button_tv"
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:paddingTop="13dp"
+    	android:paddingBottom="13dp"
+    	android:gravity="center"
+    	android:textSize="17sp"
+    	android:text="确    定"
+    	android:textColor="@android:color/white" 
+    	android:background="@drawable/weixin_bt_selector"
+        />
+</LinearLayout>

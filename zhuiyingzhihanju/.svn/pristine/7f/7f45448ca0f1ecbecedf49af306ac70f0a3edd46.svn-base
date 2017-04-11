@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        layout="@layout/title_search" />
+
+    <EditText
+        android:id="@+id/main_search"
+        android:layout_width="fill_parent"
+        android:layout_height="29dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edit_bg"
+        android:drawableLeft="@drawable/search_icon"
+        android:drawablePadding="7dp"
+        android:focusable="false"
+        android:paddingLeft="100dp"
+        android:textColor="#9d9c9c"
+        android:textColorHint="#9d9c9c"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:id="@+id/fancy_his_re"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#f9eecb" >
+
+        <RelativeLayout
+            android:id="@+id/fancy_his_close"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/record_close" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/fancy_his"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/fancy_his_close"
+            android:singleLine="true"
+            android:textColor="#75501a"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="190dp" >
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/fancy_viewPager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" >
+                </android.support.v4.view.ViewPager>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="102dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/banner_float" />
+
+                <TextView
+                    android:id="@+id/fancy_viewPager_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="left"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_point_group"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="right|bottom|center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp"
+                    android:paddingRight="10dp" >
+                </LinearLayout>
+            </RelativeLayout>
+
+            <com.utils.views.HorizontalListView
+                android:id="@+id/fancy_horizontalListView"
+                android:layout_width="fill_parent"
+                android:layout_height="95dp" >
+            </com.utils.views.HorizontalListView>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="10dp"
+                android:background="#f5f5f5" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#7AC057" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/titile_zuixin" />
+            </LinearLayout>
+
+            <com.utils.views.MyGridViewNoMove
+                android:id="@+id/fancy_grid"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="17dp"
+                android:horizontalSpacing="6dp"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:verticalSpacing="20dp" >
+            </com.utils.views.MyGridViewNoMove>
+
+            <LinearLayout
+                android:id="@+id/moreRe"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:id="@+id/fanny_moreRe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="9dp"
+                        android:drawableRight="@drawable/more"
+                        android:gravity="center_horizontal"
+                        android:text="更多请点我"
+                        android:textColor="#7ac057"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fanny_changeRe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="9dp"
+                        android:drawableRight="@drawable/change"
+                        android:gravity="center_horizontal"
+                        android:text="换一批看看"
+                        android:textColor="#7ac057"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="10dp"
+                android:background="#f5f5f5" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#7AC057" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/title_shangyin" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/fancy_imageshang"
+                android:layout_width="fill_parent"
+                android:layout_height="190dp"
+                android:layout_marginTop="17dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/fancy_text_shang"
+                style="@style/stitleText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="9dp" />
+
+            <TextView
+                android:id="@+id/fancy_text_dess"
+                style="@style/desText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp" />
+
+            <com.utils.views.MyGridViewNoMove
+                android:id="@+id/fancy1_grid"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:horizontalSpacing="6dp"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:verticalSpacing="20dp" >
+            </com.utils.views.MyGridViewNoMove>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:id="@+id/fanny_moreRe1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="9dp"
+                        android:drawableRight="@drawable/more"
+                        android:gravity="center_horizontal"
+                        android:text="更多请点我"
+                        android:textColor="#7ac057"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fanny_changeRe1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="9dp"
+                        android:drawableRight="@drawable/change"
+                        android:gravity="center_horizontal"
+                        android:text="换一批看看"
+                        android:textColor="#7ac057"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="10dp"
+                android:background="#f5f5f5" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#7AC057" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/title_huaxu" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/fancy_imagehua"
+                android:layout_width="fill_parent"
+                android:layout_height="190dp"
+                android:layout_marginTop="17dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/fancy_text_hua"
+                style="@style/stitleText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="9dp" />
+
+            <TextView
+                android:id="@+id/fancy_text_desh"
+                style="@style/desText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp" />
+
+            <com.utils.views.MyGridViewNoMove
+                android:id="@+id/fancy2_grid"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:horizontalSpacing="6dp"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:verticalSpacing="20dp" >
+            </com.utils.views.MyGridViewNoMove>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:id="@+id/fanny_moreRe2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="9dp"
+                        android:drawableRight="@drawable/more"
+                        android:gravity="center_horizontal"
+                        android:text="更多请点我"
+                        android:textColor="#7ac057"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fanny_changeRe2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="9dp"
+                        android:drawableRight="@drawable/change"
+                        android:gravity="center_horizontal"
+                        android:text="换一批看看"
+                        android:textColor="#7ac057"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="10dp"
+                android:background="#f5f5f5" />
+
+            <LinearLayout
+                android:id="@+id/fancy_gao"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#7AC057" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/title_tianping" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/fancy_imageTian"
+                android:layout_width="fill_parent"
+                android:layout_height="190dp"
+                android:layout_marginTop="17dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/fancy_text_tian"
+                style="@style/stitleText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="9dp" />
+
+            <TextView
+                android:id="@+id/fancy_text_des"
+                style="@style/desText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp" />
+
+            <com.utils.views.MyGridViewNoMove
+                android:id="@+id/fancy3_grid"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:horizontalSpacing="6dp"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:verticalSpacing="20dp" >
+            </com.utils.views.MyGridViewNoMove>
+
+            <LinearLayout
+                android:id="@+id/fancy_gaoMore"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:id="@+id/fanny_moreRe3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="9dp"
+                        android:drawableRight="@drawable/more"
+                        android:gravity="center_horizontal"
+                        android:text="更多请点我"
+                        android:textColor="#7ac057"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fanny_changeRe3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:drawablePadding="9dp"
+                        android:drawableRight="@drawable/change"
+                        android:gravity="center_horizontal"
+                        android:text="换一批看看"
+                        android:textColor="#7ac057"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/leftbg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="750dp"
+                android:layout_centerInParent="true" >
+
+                <Button
+                    android:id="@+id/set_wifiBtn"
+                    android:layout_width="178dp"
+                    android:layout_height="356dp"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/setting_wifi"
+                    android:onClick="onWifiClick" />
+
+                <Button
+                    android:id="@+id/set_blueBtn"
+                    android:layout_width="178dp"
+                    android:layout_height="356dp"
+                    android:layout_margin="15dp"
+                    android:layout_toRightOf="@id/set_wifiBtn"
+                    android:background="@drawable/setting_bluethooth"
+                    android:onClick="onBlueClick" />
+
+                <Button
+                    android:id="@+id/set_volumeBtn"
+                    android:layout_width="178dp"
+                    android:layout_height="356dp"
+                    android:layout_below="@id/set_wifiBtn"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/setting_volum"
+                    android:onClick="onVolumeClick" />
+
+                <Button
+                    android:id="@+id/set_AboutBtn"
+                    android:layout_width="178dp"
+                    android:layout_height="356dp"
+                    android:layout_below="@id/set_blueBtn"
+                    android:layout_margin="15dp"
+                    android:layout_toRightOf="@id/set_volumeBtn"
+                    android:background="@drawable/setting_about"
+                    android:onClick="onAboutClick" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:background="@drawable/rightbg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="750dp"
+                android:layout_centerInParent="true" >
+
+                <Button
+                    android:id="@+id/set_wifiBtn1"
+                    android:layout_width="178dp"
+                    android:layout_height="356dp"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/setting_wifi"
+                    android:onClick="onWifiClick" />
+
+                <Button
+                    android:id="@+id/set_blueBtn1"
+                    android:layout_width="178dp"
+                    android:layout_height="356dp"
+                    android:layout_margin="15dp"
+                    android:layout_toRightOf="@id/set_wifiBtn1"
+                    android:background="@drawable/setting_bluethooth"
+                    android:onClick="onBlueClick" />
+
+                <Button
+                    android:id="@+id/set_volumeBtn1"
+                    android:layout_width="178dp"
+                    android:layout_height="356dp"
+                    android:layout_below="@id/set_wifiBtn1"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/setting_volum"
+                    android:onClick="onVolumeClick" />
+
+                <Button
+                    android:id="@+id/set_AboutBtn1"
+                    android:layout_width="178dp"
+                    android:layout_height="356dp"
+                    android:layout_below="@id/set_blueBtn1"
+                    android:layout_margin="15dp"
+                    android:layout_toRightOf="@id/set_volumeBtn1"
+                    android:background="@drawable/setting_about"
+                    android:onClick="onAboutClick" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

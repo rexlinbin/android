@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/homepage_title"
+        layout="@layout/common_title" />
+
+    <com.bccv.strategy.ui.view.RoundTab
+        android:id="@+id/round_tab"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent" >
+    </com.bccv.strategy.ui.view.RoundTab>
+
+    <com.bccv.strategy.ui.view.HomePageViewPager
+        android:id="@+id/round_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/round_tab"
+        android:layout_below="@id/homepage_title" />
+
+    <include
+        android:id="@+id/homepage_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/homepage_title"
+        layout="@layout/common_loading" />
+
+    <include
+        android:id="@+id/homepage_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/homepage_title"
+        layout="@layout/common_error"
+        android:visibility="gone" />
+
+</RelativeLayout>

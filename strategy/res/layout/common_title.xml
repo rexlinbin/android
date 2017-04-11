@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:gravity="center_vertical" >
+
+    <LinearLayout
+        android:id="@+id/common_title_menu_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp" >
+
+        <ImageView
+            android:id="@+id/iv_common_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_menu_btn_selector"
+            android:duplicateParentState="true"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/common_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="这是标头"
+        android:textColor="@android:color/white"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/common_title_right_tv"
+        android:text="编辑"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingRight="15dp" 
+        android:layout_alignParentRight="true" />
+    <LinearLayout
+        android:id="@+id/common_title_right_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingRight="15dp" 
+        android:layout_alignParentRight="true">
+
+        <ImageView
+            android:id="@+id/iv_common_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/title_right_btn_selector"
+            android:duplicateParentState="true"
+            tools:ignore="ContentDescription"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

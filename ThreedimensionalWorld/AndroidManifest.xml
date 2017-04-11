@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bccv.threedimensionalworld"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE"/> 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+
+    <application
+        android:name="com.bccv.threedimensionalworld.tool.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        <activity
+            android:name="com.bccv.threedimensionalworld.activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MovieClassificationActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MovieListActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MovieNoSearchListActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MovieNoSearchInputListActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MovieInfoActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MovieSearchActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MovieSearchInputActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.VideoPlayerActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.Video2DPlayerActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.LocalVideoPlayerActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.GameClassificationActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.AppClassificationActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.AppListActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.AppInfoActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MyAppOrGameActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MyMovieListActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MusicActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.LocalMusicActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.AboutAcitvity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.SettingActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.ImageActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.MusicSelectActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.GalleryActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.LocalActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.SetVolumActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.WifiActivity" >
+        </activity>
+        <activity android:name="com.bccv.threedimensionalworld.activity.LocalVideoActivity" >
+        </activity>
+
+        <service android:name="com.bccv.threedimensionalworld.download.DownloadService" >
+            <intent-filter>
+                <action android:name="download.service.action" />
+            </intent-filter>
+        </service>
+        <activity android:name="com.bccv.threedimensionalworld.activity.UsbActivity"></activity>
+    </application>
+
+</manifest>

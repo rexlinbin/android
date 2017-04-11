@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#f6f6f6">
+    
+    <include 
+	    android:id="@+id/personal_attention_title"
+	    layout="@layout/activity_search_top_view"/>
+    
+    <com.me.maxwin.view.NormalXListView
+        android:id="@+id/attention_xlv"
+        android:layout_below="@id/personal_attention_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f6"
+        android:fastScrollEnabled="true"
+        android:divider="@null"
+        android:scrollbars="none"/>
+    
+	 <LinearLayout
+	       android:id="@+id/ll_no_result"
+	       android:layout_below="@id/personal_attention_title"
+	       android:layout_width="match_parent"
+	       android:layout_height="match_parent"
+	       android:orientation="vertical"
+	       android:gravity="center"
+	       android:visibility="gone" >
+	
+	       <TextView
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_gravity="center_horizontal"
+	           android:layout_marginTop="30dp"
+	           android:gravity="center_horizontal"
+	           android:text="暂时没有数据,下拉刷新"
+	           android:textSize="16sp" 
+	           android:textColor="#666666"/>
+	    </LinearLayout>
+	    
+      <include 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/common_waiting"
+        android:focusable="true" />
+    
+</RelativeLayout>

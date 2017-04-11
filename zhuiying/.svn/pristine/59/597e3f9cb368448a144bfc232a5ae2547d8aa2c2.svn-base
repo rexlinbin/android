@@ -1,0 +1,411 @@
+package com.bccv.zhuiying.activity;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.bccv.zhuiying.R;
+import com.bccv.zhuiying.adapter.HotSearchAdapter;
+import com.bccv.zhuiying.adapter.MovieListAdapter;
+import com.bccv.zhuiying.api.SearchApi;
+import com.bccv.zhuiying.model.HotSearch;
+import com.bccv.zhuiying.model.Movie;
+import com.bccv.zhuiying.model.Search;
+import com.bccv.zhuiying.model.SearchInfo;
+import com.bccv.zhuiying.model.SearchType;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.tendcloud.tenddata.TCAgent;
+import com.utils.tools.BaseActivity;
+import com.utils.tools.Callback;
+import com.utils.tools.GlobalParams;
+import com.utils.tools.InputTools;
+import com.utils.tools.SerializationUtil;
+import com.utils.tools.StringUtils;
+import com.utils.views.HorizontalListView;
+import com.utils.views.MyScrollView;
+import com.utils.views.RoundedImageView;
+import com.utils.views.WordWrapView;
+
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
+import android.widget.EditText;
+import android.widget.GridView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.TextView.OnEditorActionListener;
+
+public class MovieSearchActivity extends BaseActivity {
+	private ListView listView;
+	private List<String> historyList;
+	private List<HotSearch> hotSearchList, getHotSearchList;
+	private HotSearchAdapter adapter;
+	private TextView clearTextView, searchTextView;
+	private WordWrapView wordWrapView;
+	private EditText searchEditText;
+	private LinearLayout searchInfoLayout;
+	private GridView searchListView;
+	private List<Movie> searchList, getSearchList;
+	private MovieListAdapter searchAdapter;
+	private ImageView imageView;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		TCAgent.onPageStart(getApplicationContext(), "MovieSearchActivity");
+		setContentView(R.layout.activity_search);
+		setBack();
+		setView();
+		getData();
+	}
+
+	private ImageButton backTextView;
+
+	private void setBack() {
+		backTextView = (ImageButton) findViewById(R.id.back_textView);
+		backTextView.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				finish();
+			}
+		});
+	}
+
+	private void setView() {
+		searchInfoLayout = (LinearLayout) findViewById(R.id.searchInfo_layout);
+		listView = (ListView) findViewById(R.id.listView);
+		hotSearchList = new ArrayList<HotSearch>();
+		adapter = new HotSearchAdapter(getApplicationContext(), hotSearchList);
+		listView.setAdapter(adapter);
+		listView.setSelector(new ColorDrawable(android.R.color.transparent));
+		listView.setDividerHeight(0);
+		listView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				// TODO Auto-generated method stub
+				String searchString = hotSearchList.get(position).getName();
+				searchInfoLayout.setVisibility(View.GONE);
+				getSearchData(searchString);
+			}
+		});
+
+		historyList = SerializationUtil.readSelectHistoryCache(getApplicationContext());
+		if (historyList == null) {
+			historyList = new ArrayList<String>();
+		}
+
+		searchEditText = (EditText) findViewById(R.id.search_editText);
+		searchTextView = (TextView) findViewById(R.id.search_textView);
+		clearTextView = (TextView) findViewById(R.id.clear_textView);
+		wordWrapView = (WordWrapView) findViewById(R.id.wordWrapView);
+		for (final String string : historyList) {
+			TextView textView = new TextView(getApplicationContext());
+			textView.setBackgroundResource(R.drawable.selector_searchhistory);
+			textView.setGravity(Gravity.CENTER);
+			textView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+			textView.setText(string);
+			textView.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					String searchString = string;
+					searchInfoLayout.setVisibility(View.GONE);
+					getSearchData(searchString);
+				}
+			});
+			wordWrapView.addView(textView);
+		}
+		searchTextView.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				String searchString = searchEditText.getText().toString();
+				if (!StringUtils.isEmpty(searchString)) {
+					if (!historyList.contains(searchString)) {
+						historyList.add(searchString);
+						TextView textView = new TextView(getApplicationContext());
+						textView.setText(searchString);
+						wordWrapView.addView(textView);
+						SerializationUtil.wirteSelectHistorySerialization(getApplicationContext(),
+								(Serializable) historyList);
+					}
+
+				}
+				searchInfoLayout.setVisibility(View.GONE);
+				getSearchData(searchEditText.getText().toString());
+				hideKeyboard();
+			}
+		});
+
+		clearTextView.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				historyList.clear();
+				wordWrapView.removeAllViews();
+				SerializationUtil.wirteSelectHistorySerialization(getApplicationContext(), (Serializable) historyList);
+			}
+		});
+
+		searchEditText.setOnEditorActionListener(new OnEditorActionListener() {
+
+			@Override
+			public boolean onEditorAction(TextView arg0, int actionId, KeyEvent arg2) {
+				// TODO Auto-generated method stub
+				if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+					String searchString = searchEditText.getText().toString();
+					if (!StringUtils.isEmpty(searchString)) {
+						if (!historyList.contains(searchString)) {
+							historyList.add(searchString);
+							TextView textView = new TextView(getApplicationContext());
+							textView.setText(searchString);
+							wordWrapView.addView(textView);
+							SerializationUtil.wirteSelectHistorySerialization(getApplicationContext(),
+									(Serializable) historyList);
+						}
+					}
+					searchInfoLayout.setVisibility(View.GONE);
+					getSearchData(searchEditText.getText().toString());
+					hideKeyboard();
+				}
+				return false;
+			}
+		});
+
+		initSearchList();
+		
+		imageView = (ImageView) findViewById(R.id.none_imageView);
+		imageView.setVisibility(View.GONE);
+	}
+
+	private void getData() {
+		Callback callback = new Callback() {
+
+			@Override
+			public void handleResult(String result) {
+				// TODO Auto-generated method stub
+				if (getHotSearchList != null) {
+					hotSearchList.addAll(getHotSearchList);
+					adapter.notifyDataSetChanged();
+				}
+			}
+		};
+
+		new DataAsyncTask(callback, false) {
+
+			@Override
+			protected String doInBackground(String... params) {
+				// TODO Auto-generated method stub
+				SearchApi searchApi = new SearchApi();
+				getHotSearchList = searchApi.getHotSearchList("10");
+				return null;
+			}
+		}.execute("");
+	}
+	
+	
+	
+	private MyScrollView scrollView;
+	private LinearLayout movieLayout, starLayout, tvLayout, varietyLayout, musicLayout, newsLayout, cartoonLayout, sportsLayout, gamesLayout;
+
+	private void initSearchList() {
+		scrollView = (MyScrollView) findViewById(R.id.scrollView);
+		movieLayout = (LinearLayout) findViewById(R.id.movie_layout);
+		tvLayout = (LinearLayout) findViewById(R.id.tv_layout);
+		varietyLayout = (LinearLayout) findViewById(R.id.variety_layout);
+		musicLayout = (LinearLayout) findViewById(R.id.music_layout);
+		newsLayout = (LinearLayout) findViewById(R.id.news_layout);
+		cartoonLayout = (LinearLayout) findViewById(R.id.cartoon_layout);
+		sportsLayout = (LinearLayout) findViewById(R.id.sports_layout);
+		gamesLayout = (LinearLayout) findViewById(R.id.games_layout);
+	}
+
+	private void setSearchList() {
+		
+		final SearchType movie = search.getMovie();
+		TextView movieMoreTextView = (TextView) findViewById(R.id.movie_more_layout);
+		setSearchView("movie", "电影", movie, movieLayout, movieMoreTextView);
+
+		final SearchType tv = search.getTv();
+		TextView tvMoreTextView = (TextView) findViewById(R.id.tv_more_layout);
+		setSearchView("tv", "电视剧", tv, tvLayout, tvMoreTextView);
+
+		final SearchType variety = search.getVariety();
+		TextView varietyMoreTextView = (TextView) findViewById(R.id.variety_more_layout);
+		setSearchView("variety", "综艺", variety, varietyLayout, varietyMoreTextView);
+
+		final SearchType music = search.getMusic();
+		TextView musicMoreTextView = (TextView) findViewById(R.id.music_more_layout);
+		setSearchView("music", "音乐", music, musicLayout, musicMoreTextView);
+
+		final SearchType news = search.getNews();
+		TextView newsMoreTextView = (TextView) findViewById(R.id.news_more_layout);
+		setSearchView("news", "资讯", news, newsLayout, newsMoreTextView);
+
+		final SearchType cartoon = search.getCartoon();
+		TextView cartoonMoreTextView = (TextView) findViewById(R.id.cartoon_more_layout);
+		setSearchView("cartoon", "动画", cartoon, cartoonLayout, cartoonMoreTextView);
+		
+		final SearchType sports = search.getSports();
+		TextView sportsMoreTextView = (TextView) findViewById(R.id.sports_more_layout);
+		setSearchView("sports", "体育", sports, sportsLayout, sportsMoreTextView);
+		
+		final SearchType games = search.getGames();
+		TextView gamesMoreTextView = (TextView) findViewById(R.id.games_more_layout);
+		setSearchView("games", "游戏", games, gamesLayout, gamesMoreTextView);
+
+	}
+	
+	private void setSearchView(final String type_id, final String title, final SearchType searchType, LinearLayout layout, TextView moreTextView){
+		ImageLoader imageLoader = ImageLoader.getInstance();
+		if (searchType != null && searchType.getTotal() > 0) {
+			layout.setVisibility(View.VISIBLE);
+//			if (layout.getChildCount() > 3) {
+//				layout.removeViews(1, layout.getChildCount() - 3);
+//			}
+			int num = searchType.getNum();
+			int total = searchType.getTotal();
+			int row = 0;
+			if (num % 3 != 0) {
+				row = num / 3 + 1;
+			}else{
+				row = num / 3;
+			}
+			for (int i = 0; i < row; i++) {
+				View convertView = View.inflate(getApplicationContext(), R.layout.listitem_search, null);
+				View first = convertView.findViewById(R.id.first_layout);
+				View second = convertView.findViewById(R.id.second_layout);
+				View third = convertView.findViewById(R.id.third_layout);
+				for (int j = 0; j < 3; j++) {
+					int searchNum = i * 3 + j;
+					View view = null;
+					if (j == 0) {
+						view = first;
+					} else if (j == 1) {
+						view = second;
+					} else if (j== 2){
+						view = third;
+					}
+					if (num > searchNum) {
+						view.setVisibility(View.VISIBLE);
+					}else{
+						view.setVisibility(View.GONE);
+						continue;
+					}
+					final SearchInfo searchInfo = searchType.getResult().get(searchNum);
+					ImageView roundedImageView = (ImageView) view.findViewById(R.id.imageView);
+					TextView titleTextView = (TextView) view.findViewById(R.id.textView);
+					TextView scoreTextView = (TextView) view.findViewById(R.id.score_textView);
+					scoreTextView.setText(searchInfo.getRating());
+					titleTextView.setText(searchInfo.getTitle());
+					imageLoader.displayImage(searchInfo.getImage(), roundedImageView, GlobalParams.movieOptions);
+					roundedImageView.setOnClickListener(new OnClickListener() {
+
+						@Override
+						public void onClick(View v) {
+							// TODO Auto-generated method stub
+							Intent intent = new Intent(getApplicationContext(), MovieInfoActivity.class);
+							Movie movieinfo = new Movie();
+							movieinfo.setId(searchInfo.getId());
+							movieinfo.setTitle(searchInfo.getTitle());
+							movieinfo.setType_id(searchInfo.getType_id());
+							movieinfo.setImages(searchInfo.getImage());
+							intent.putExtra("movie", movieinfo);
+							startActivity(intent);
+						}
+					});
+					
+				}
+				
+				
+				layout.addView(convertView, i + 1);
+			}
+			
+			if (total > num) {
+				moreTextView.setVisibility(View.VISIBLE);
+				moreTextView.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						// TODO Auto-generated method stub
+						Intent intent = new Intent(getApplicationContext(), SearchMoreActivity.class);
+						intent.putExtra("title", title);
+						intent.putExtra("type_id", type_id);
+						intent.putExtra("keyword", searchString);
+						intent.putExtra("list", (Serializable) searchType.getResult());
+						startActivity(intent);
+					}
+				});
+			} else {
+				moreTextView.setVisibility(View.GONE);
+			}
+
+		} else {
+			layout.setVisibility(View.GONE);
+		}
+	}
+	
+	
+	private Search search;
+	private String searchString="";
+
+	private void getSearchData(final String string) {
+		searchString = string;
+		Callback callback = new Callback() {
+
+			@Override
+			public void handleResult(String result) {
+				// TODO Auto-generated method stub
+				if (search != null) {
+					imageView.setVisibility(View.GONE);
+					scrollView.setVisibility(View.VISIBLE);
+					setSearchList();
+				} else {
+					imageView.setVisibility(View.VISIBLE);
+					scrollView.setVisibility(View.GONE);
+					Toast.makeText(getApplicationContext(), "未搜索到相关信息", 1).show();
+				}
+			}
+		};
+
+		new DataAsyncTask(callback, true) {
+
+			@Override
+			protected String doInBackground(String... params) {
+				// TODO Auto-generated method stub
+				SearchApi searchApi = new SearchApi();
+				search = searchApi.getSearchList(string, "1", "100000");
+				return null;
+			}
+		}.execute("");
+	}
+	
+	private void hideKeyboard(){
+		InputTools.HideKeyboard(searchEditText);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		TCAgent.onPageEnd(getApplicationContext(), "MovieSearchActivity");
+	}
+}

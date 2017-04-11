@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        layout="@layout/title_search" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#f5f5f5"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/my_login"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="0.5dp"
+                android:background="#fff" >
+
+                <com.utils.views.CircleImageView
+                    android:id="@+id/my_icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/head_default" />
+
+                <ImageButton
+                    android:id="@+id/my_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/right" />
+
+                <RelativeLayout
+                    android:id="@+id/my_re"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@id/my_more"
+                    android:layout_toRightOf="@id/my_icon" >
+
+                    <TextView
+                        android:id="@+id/my_name"
+                        style="@style/MyName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="登陆/注册" />
+
+                    <TextView
+                        android:id="@+id/my_sign"
+                        style="@style/MySign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/my_name"
+                        android:layout_centerVertical="true"
+                        android:text="据说，登陆后看片更流畅" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/my_collect_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="#fff" >
+
+                <ImageView
+                    android:id="@+id/my_collect_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/collection" />
+
+                <TextView
+                    android:id="@+id/my_collect_text1"
+                    style="@style/MyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/my_collect_im"
+                    android:text="收藏" />
+
+                <ImageButton
+                    android:id="@+id/my_collect_goBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/right" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#eee" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/my_down_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="#fff" >
+
+                <ImageView
+                    android:id="@+id/my_huancun_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/down" />
+
+                <TextView
+                    android:id="@+id/my_huancun_text1"
+                    style="@style/MyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/my_huancun_im"
+                    android:text="缓存" />
+
+                <ImageButton
+                    android:id="@+id/my_huancun_goBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/right" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#eee" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/my_msg_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="#fff" >
+
+                <ImageView
+                    android:id="@+id/my_msg_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/news" />
+
+                <TextView
+                    android:id="@+id/my_msg_text1"
+                    style="@style/MyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/my_msg_im"
+                    android:text="消息" />
+
+                <ImageView
+                    android:id="@+id/msg_dot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@id/my_msg_text1"
+                    android:background="@drawable/red_dot"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/my_msg_goBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/right" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#eee" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/my_history_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="#fff" >
+
+                <ImageView
+                    android:id="@+id/my_history_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/records" />
+
+                <TextView
+                    android:id="@+id/my_history_text1"
+                    style="@style/MyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/my_history_im"
+                    android:text="历史" />
+
+                <ImageButton
+                    android:id="@+id/my_history_goBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/right" />
+
+                <TextView
+                    android:id="@+id/my_history_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:text="还没有历史记录"
+                    android:textColor="#ccc"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="15dp"
+                android:background="#eee" />
+
+            <com.utils.views.MyGridView
+                android:id="@+id/my_history_grid"
+                android:layout_width="fill_parent"
+                android:layout_height="70dp"
+                android:background="#fff"
+                android:numColumns="5" >
+            </com.utils.views.MyGridView>
+
+            <RelativeLayout
+                android:id="@+id/my_set_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="#fff" >
+
+                <ImageView
+                    android:id="@+id/my_set_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/set" />
+
+                <TextView
+                    android:id="@+id/my_set_text1"
+                    style="@style/MyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/my_set_im"
+                    android:text="设置" />
+
+                <ImageButton
+                    android:id="@+id/my_set_goBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/right" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginRight="15dp"
+                    android:background="#eee" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

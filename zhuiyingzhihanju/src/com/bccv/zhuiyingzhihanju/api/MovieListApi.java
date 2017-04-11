@@ -1,0 +1,180 @@
+package com.bccv.zhuiyingzhihanju.api;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.json.JSONObject;
+
+import com.alibaba.fastjson.JSON;
+import com.bccv.zhuiyingzhihanju.model.Movie;
+import com.utils.net.HttpClientUtil;
+import com.utils.tools.StringUtils;
+
+import android.util.Log;
+
+public class MovieListApi extends AppApi {
+	public List<Movie> getSearchMovieList(String key, String page, String count){
+		HttpClientUtil util = new HttpClientUtil();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("key", key);
+		params.put("page", page);
+		params.put("count", count);
+		String result = util.sendGet(Url.Search, params);
+		if (result != null) {
+			Log.e("getSearchMovieList", result);
+		} else {
+			Log.e("getSearchMovieList", "null");
+		}
+		if (!StringUtils.isEmpty(result)) {
+			try {
+				JSONObject jsonObject = new JSONObject(result);
+				if (checkResponse(jsonObject)) {
+					String rtnStr = jsonObject.getString("data");
+
+					if (!StringUtils.isEmpty(rtnStr) && !rtnStr.equals("null")) {
+
+						List<Movie> list = null;
+						list = JSON.parseArray(rtnStr, Movie.class);
+
+						return list;
+					}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return null;
+	}
+	
+	public List<Movie> getMovieList(String type_id, String page, String count){
+		HttpClientUtil util = new HttpClientUtil();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("type_id", type_id);
+		params.put("page", page);
+		params.put("count", count);
+		String result = util.sendGet(Url.Movie_Type, params);
+		if (result != null) {
+			Log.e("getMovieList", result);
+		} else {
+			Log.e("getMovieList", "null");
+		}
+		if (!StringUtils.isEmpty(result)) {
+			try {
+				JSONObject jsonObject = new JSONObject(result);
+				if (checkResponse(jsonObject)) {
+					String rtnStr = jsonObject.getString("data");
+
+					if (!StringUtils.isEmpty(rtnStr) && !rtnStr.equals("null")) {
+
+						List<Movie> list = null;
+						list = JSON.parseArray(rtnStr, Movie.class);
+
+						return list;
+					}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return null;
+	}
+	
+	public List<Movie> getTypeList(String theme_id, String page, String count){
+		HttpClientUtil util = new HttpClientUtil();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("theme_id", theme_id);
+		params.put("page", page);
+		params.put("count", count);
+		String result = util.sendGet(Url.ThemeMovielist, params);
+		if (result != null) {
+			Log.e("getTypeList", result);
+		} else {
+			Log.e("getTypeList", "null");
+		}
+		if (!StringUtils.isEmpty(result)) {
+			try {
+				JSONObject jsonObject = new JSONObject(result);
+				if (checkResponse(jsonObject)) {
+					String rtnStr = jsonObject.getString("data");
+
+					if (!StringUtils.isEmpty(rtnStr) && !rtnStr.equals("null")) {
+
+						List<Movie> list = null;
+						list = JSON.parseArray(rtnStr, Movie.class);
+						if (list == null) {
+							list = new ArrayList<>();
+						}
+						return list;
+					}else{
+						
+							return new ArrayList<>();
+						
+					}
+				}else{
+					
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return null;
+	}
+	
+	
+	
+	
+	
+	public List<Movie> getMoreList(String client_type, String page, String count){
+		HttpClientUtil util = new HttpClientUtil();
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("client_type", client_type);
+		params.put("page", page);
+		params.put("count", count);
+		String result = util.sendGet(Url.more, params);
+		if (result != null) {
+			Log.e("getSearchMovieList", result);
+		} else {
+			Log.e("getSearchMovieList", "null");
+		}
+		if (!StringUtils.isEmpty(result)) {
+			try {
+				JSONObject jsonObject = new JSONObject(result);
+				if (checkResponse(jsonObject)) {
+					String rtnStr = jsonObject.getString("data");
+
+					if (!StringUtils.isEmpty(rtnStr) && !rtnStr.equals("null")) {
+
+						List<Movie> list = null;
+						list = JSON.parseArray(rtnStr, Movie.class);
+
+						return list;
+					}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

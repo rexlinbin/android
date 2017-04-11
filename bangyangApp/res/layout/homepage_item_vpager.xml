@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg"
+        tools:ignore="UselessParent" >
+
+        <RelativeLayout
+            android:id="@+id/homepage_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <TextView
+                android:id="@+id/homepage_item_appname"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="#191919"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/homepage_item_appintro"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/homepage_item_appname"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/homepage_item_appname"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="#999999"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/homepage_item_usericon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/head_default"
+                tools:ignore="ContentDescription" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/homepage_item_app_poster"
+            android:layout_width="match_parent"
+            android:layout_height="195dp"
+            android:layout_below="@id/homepage_item_title"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_680390"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/homepage_item_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="23dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#bbbbbb"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/homepage_item_app_introduce"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/homepage_item_username"
+            android:layout_below="@id/homepage_item_app_poster"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="4dp"
+            android:maxLines="7"
+            android:textColor="#666666"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+</FrameLayout>

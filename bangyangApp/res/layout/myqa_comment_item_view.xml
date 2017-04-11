@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <ImageView
+        android:id="@+id/qa_item_iv"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/head_default"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/qa_item_question_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="32dp"
+        android:layout_toRightOf="@id/qa_item_iv"
+        android:lineSpacingExtra="4dp"
+        android:textColor="#666666"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/qa_item_answer_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/qa_item_question_tv"
+        android:layout_below="@id/qa_item_question_tv"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@id/qa_item_iv"
+        android:background="@drawable/huifu_bg"
+        android:lineSpacingExtra="4dp"
+        android:paddingTop="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#666666"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/qa_item_answer_tv"
+        android:layout_marginTop="30dp"
+        android:background="#e6e6e6" />
+
+</RelativeLayout>

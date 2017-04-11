@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <RelativeLayout
+        android:id="@+id/pro_mid"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <!--
+             <ImageView
+            android:id="@+id/pro_icon"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/home_headpic_9"
+            android:padding="2dp"
+            android:src="@drawable/ic_img_user_default" />
+        -->
+
+        <TextView
+            android:id="@+id/tv_pro_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pro_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="诺伊Stander"
+            android:textColor="#555555"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/pro_guanzhu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_pro_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/per_guanzhu" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pro_mid"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/ll_pro_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp" >
+
+            <TextView
+                android:id="@+id/pro_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/pro_album"
+                android:textColor="#555555"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/pro_line_left"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/pro_album"
+                android:layout_marginTop="10dp"
+                android:background="#999999" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_pro_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp" >
+
+            <TextView
+                android:id="@+id/pro_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/pro_comment"
+                android:textColor="#555555"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/pro_line_right"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/pro_comment"
+                android:layout_marginTop="10dp"
+                android:background="#f0f0f0" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pro_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_title"
+        android:layout_marginTop="20dp" >
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

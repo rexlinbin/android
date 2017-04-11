@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
+  <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="41dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="40dp" >
+
+        <EditText
+            android:id="@+id/login_tellEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/regist_userinfo_bg"
+            android:hint="输入用户名"
+            android:paddingLeft="10dp"
+                    android:textSize="13sp"
+           android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/user"
+            android:textColor="#cccccccc"
+            android:textColorHint="#cccccccc" />
+
+        <ImageView
+            android:id="@+id/login_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/empty" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp" >
+
+        <EditText
+            android:id="@+id/login_passWordEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/regist_userinfo_bg"
+            android:hint="输入用户密码"
+            android:paddingLeft="10dp"
+            android:password="true"
+            android:textSize="13sp"
+           android:drawableLeft="@drawable/lock"
+            android:drawablePadding="10dp"
+            android:textColor="#cccccccc"
+            android:textColorHint="#cccccccc" />
+
+       
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/logbtn_selector"
+        android:text="登录"
+        android:textColor="#fff" />
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fogetPW"
+        android:text="忘记密码"
+          android:layout_marginRight="25dp"
+        android:layout_gravity="right"
+        android:textColor="#99ffffff"
+        android:background="#7D6659"
+                android:textSize="13sp"
+        android:layout_marginTop="20dp"
+        />
+  
+</LinearLayout>

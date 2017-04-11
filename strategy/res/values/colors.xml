@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <!-- weixindialog -->
+    <color name="weixin_bt_pressed_color">#282a2b</color>
+    <color name="weixin_bt_unpress_color">#303537</color>
+    <color name="dialog_bg_clicked">#eeeeee</color>
+    <color name="dialog_bg_unclick">#ffffff</color>
+    
+    
+     <!-- localphoto -->
+    <color name="light_black">#666666</color>
+    <color name="light_gray">#999999</color>
+    <color name="common_bg">#ededed</color>
+    <color name="common_text">#fff8ac</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#84959d</color>
+    <color name="light_gray_1">#EEEEE0</color>
+    <color name="light_gray_2">#A0A0A0</color>
+    <color name="gold">#b89766</color>
+    <color name="black">#ff000000</color>
+    <color name="black_light">#626262</color>
+    <color name="blue">#0075a9</color>
+    <color name="red">#ff0000</color>
+     <color name="red_1">#E70012</color>
+    <color name="green_forlist">#49BA52</color>
+    
+    
+    <!-- ui colors -->
+    <color name="common_title_background">#292929</color>
+    <color name="tap_text_checked">#f1c646</color>
+    <color name="tap_text_uncheck">#999999</color>
+    
+    <!-- progress bar -->
+    <drawable name="progress_back">#999999</drawable>
+    <drawable name="progress_forecolor">#efc136</drawable>
+    <drawable name="progerss_done">#45c958</drawable>
+    <drawable name="delete">#ef5d36</drawable>
+    
+    <!-- setting -->
+    <drawable name="item">#1affffff</drawable>
+    <drawable name="item_press">#0dffffff</drawable>
+    
+    <!-- setting -->
+    <drawable name="app_grid_item">#ffffff</drawable>
+    <drawable name="app_grid_item_press">#f6f6f6</drawable>
+    
+    <!-- morezan -->
+    <drawable name="more_zan_item_light">#ffffff</drawable>
+    <drawable name="more_zan_item_dark">#f6f6f6</drawable>
+    
+    <!-- strategy -->
+    <drawable name="strategy_item_light">#ffffff</drawable>
+    <drawable name="strategy_item_dark">#f0f0f0</drawable>
+</resources>

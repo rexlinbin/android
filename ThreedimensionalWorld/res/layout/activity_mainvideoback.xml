@@ -1,0 +1,177 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/videoview_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:background="#000" >
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         >
+
+        <LinearLayout
+            android:id="@+id/left_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                
+
+                <RelativeLayout
+                    android:id="@+id/left_relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+
+                    <Button
+                        android:id="@+id/left_movie_Button"
+                        android:layout_width="292dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/main_movie" />
+
+                    <Button
+                        android:id="@+id/left_game_Button"
+                        android:layout_width="283dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="229dp"
+                        android:layout_marginTop="57dp"
+                        android:background="@drawable/main_game" />
+
+                    <Button
+                        android:id="@+id/left_app_Button"
+                        android:layout_width="283dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="229dp"
+                        android:layout_marginTop="292dp"
+                        android:background="@drawable/main_app" />
+
+                    <Button
+                        android:id="@+id/left_music_Button"
+                        android:layout_width="171dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="456dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/main_music" />
+
+                    <Button
+                        android:id="@+id/left_local_Button"
+                        android:layout_width="166dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="579dp"
+                        android:layout_marginTop="57dp"
+                        android:background="@drawable/main_local" />
+
+                    <Button
+                        android:id="@+id/left_setting_Button"
+                        android:layout_width="166dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="579dp"
+                        android:layout_marginTop="292dp"
+                        android:background="@drawable/main_setting" />
+                </RelativeLayout>
+
+                <com.bccv.threedimensionalworld.view.MyTitleView
+                    android:id="@+id/left_myTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true" >
+                </com.bccv.threedimensionalworld.view.MyTitleView>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/right_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                
+
+                <com.bccv.threedimensionalworld.view.MyTitleView
+                    android:id="@+id/right_myTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="10dp" />
+
+                <RelativeLayout
+                    android:id="@+id/right_relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+
+                    <Button
+                        android:id="@+id/right_movie_Button"
+                        android:layout_width="292dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/main_movie" />
+
+                    <Button
+                        android:id="@+id/right_game_Button"
+                        android:layout_width="283dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="229dp"
+                        android:layout_marginTop="57dp"
+                        android:background="@drawable/main_game" />
+
+                    <Button
+                        android:id="@+id/right_app_Button"
+                        android:layout_width="283dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="229dp"
+                        android:layout_marginTop="292dp"
+                        android:background="@drawable/main_app" />
+
+                    <Button
+                        android:id="@+id/right_music_Button"
+                        android:layout_width="171dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="456dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/main_music" />
+
+                    <Button
+                        android:id="@+id/right_local_Button"
+                        android:layout_width="166dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="579dp"
+                        android:layout_marginTop="57dp"
+                        android:background="@drawable/main_local" />
+
+                    <Button
+                        android:id="@+id/right_setting_Button"
+                        android:layout_width="166dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="579dp"
+                        android:layout_marginTop="292dp"
+                        android:background="@drawable/main_setting" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout
+        android:id="@+id/ll_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/list_iv_book_pic_first"
+            android:layout_width="100dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/list_tv_book_name_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="hahaha"
+            android:textColor="#555555"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/list_iv_book_pic_second"
+            android:layout_width="100dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/list_tv_book_name_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="hahaha"
+            android:textColor="#555555"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/list_iv_book_pic_third"
+            android:layout_width="100dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="15dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/list_tv_book_name_third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="hahaha"
+            android:textColor="#555555"
+            android:textSize="13sp" />
+    </LinearLayout>
+    
+    <View 
+        android:id="@+id/view"
+        android:layout_below="@id/ll_first"
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="15dp"
+        android:background="#eeeeee"/>
+
+</RelativeLayout>

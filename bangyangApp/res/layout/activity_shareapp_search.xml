@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.bccv.bangyangapp.ui.view.BackGroundView
+        android:id="@+id/background_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/search_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@android:color/transparent" >
+
+        <ImageView
+            android:id="@+id/iv_common_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/title_menu_left_selector"
+            android:duplicateParentState="true"
+            tools:ignore="ContentDescription" />
+
+        <RelativeLayout
+            android:id="@+id/search_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/search_bg" >
+
+            <ImageView
+                android:id="@+id/search_edit_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/edit_clear_selector"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:id="@+id/search_edit_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/search_edit_clear"
+                android:background="@android:color/transparent"
+                android:hint="@string/default_search_input"
+                android:textCursorDrawable="@null"
+                android:singleLine="true"
+                android:textColor="#7fffffff"
+                android:textColorHint="#7fffffff"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+     <GridView
+        android:id="@+id/search_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_title"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="false"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="4"
+        android:scrollbars="none"
+        android:smoothScrollbar="true"
+        android:background="@android:color/white" /> 
+    
+    <include 
+        android:id="@+id/search_loading"
+        layout="@layout/common_loading"/>
+    
+    <include 
+        android:id="@+id/search_error"
+        layout="@layout/common_error"
+        android:visibility="gone"/>
+     
+</RelativeLayout>

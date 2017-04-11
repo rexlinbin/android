@@ -1,0 +1,1395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000" >
+
+        <LinearLayout
+            android:id="@+id/left_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bg2" />
+
+                <com.bccv.threedimensionalworld.view.MyTitleView
+                    android:id="@+id/left_myTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp" />
+
+                <Button
+                    android:id="@+id/left_back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/moviesearch_back"
+                    android:text="" />
+                
+                <Button
+                    android:id="@+id/left_search_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/left_back_button"
+                    android:background="@drawable/moviesearch_search"
+                    android:text="" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/left_back_button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/left_area_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-25dp"
+                        android:layout_marginTop="0dp"
+                        android:text="按地区"
+                        android:textColor="#00bdb1"
+                        android:textSize="40sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp" >
+
+                        <Button
+                            android:id="@+id/left_allarea_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/movie_hover"
+                            android:text="全部"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_china_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/left_allarea_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="内地"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_hongkong_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/left_china_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="香港"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_taiwan_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/left_hongkong_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="台湾"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_japan_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/left_taiwan_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="日本"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_korea_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_japan_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="韩国"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_america_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_korea_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="美国"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_india_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_america_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="印度"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_Thailand_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_india_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="泰国"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_europe_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_Thailand_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="欧洲"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/left_type_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="-25dp"
+                        android:text="按类型"
+                        android:textColor="#00bdb1"
+                        android:textSize="40sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp" >
+
+                        <Button
+                            android:id="@+id/left_alltype_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="全部"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_cinema_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_alltype_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="院线"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_action_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_cinema_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="动作"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_adventure_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_action_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="冒险"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_comedy_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_adventure_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="喜剧"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_love_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_comedy_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="爱情"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_war_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_love_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="战争"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_terror_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_war_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="恐怖"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_crime_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_terror_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="犯罪"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_suspense_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_crime_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="悬疑"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_panic_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_suspense_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="惊悚"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_emprise_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_panic_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="武侠"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_sciencefiction_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_emprise_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="科幻"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_music_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_sciencefiction_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="音乐"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_cartoon_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@+id/left_cinema_Button"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="动画"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_strange_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/left_cartoon_Button"
+                            android:layout_alignBottom="@+id/left_cartoon_Button"
+                            android:layout_alignLeft="@+id/left_cinema_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="奇幻"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_story_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/left_strange_Button"
+                            android:layout_alignBottom="@+id/left_strange_Button"
+                            android:layout_alignLeft="@+id/left_adventure_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="剧情"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_ethic_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/left_story_Button"
+                            android:layout_alignBottom="@+id/left_story_Button"
+                            android:layout_alignLeft="@+id/left_comedy_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="伦理"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_record_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/left_ethic_Button"
+                            android:layout_alignBottom="@+id/left_ethic_Button"
+                            android:layout_toLeftOf="@+id/left_war_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="记录"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_history_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/left_record_Button"
+                            android:layout_alignBottom="@+id/left_record_Button"
+                            android:layout_alignLeft="@+id/left_war_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="历史"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_biography_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/left_history_Button"
+                            android:layout_alignBottom="@+id/left_history_Button"
+                            android:layout_toLeftOf="@+id/left_crime_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="传记"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_family_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/left_strange_Button"
+                            android:layout_alignBottom="@+id/left_strange_Button"
+                            android:layout_toLeftOf="@+id/left_adventure_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="家庭"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_dance_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignTop="@+id/left_biography_Button"
+                            android:layout_toLeftOf="@+id/left_suspense_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="歌舞"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/left_year_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="-25dp"
+                        android:text="按年代"
+                        android:textColor="#00bdb1"
+                        android:textSize="40sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp" >
+
+                        <Button
+                            android:id="@+id/left_allyear_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="全部"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_0_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_allyear_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2015"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_1_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_0_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2014"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_2_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_1_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2013"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_3_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_2_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2012"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_4_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_3_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2011"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_5_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_4_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2010"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_6_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_5_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2009"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_7_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_6_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2008"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_8_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_7_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2007"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_9_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_8_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2006"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/left_10_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/left_9_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="更早"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/left_sure_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/moviesearch_sure"
+                    android:text="" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/right_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bg2" />
+
+                <com.bccv.threedimensionalworld.view.MyTitleView
+                    android:id="@+id/right_myTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp" />
+                
+                <Button
+                    android:id="@+id/right_back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/moviesearch_back"
+                    android:text="" />
+                
+                <Button
+                    android:id="@+id/right_search_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toRightOf="@+id/right_back_button"
+                    android:background="@drawable/moviesearch_search"
+                    android:text="" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/right_back_button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/right_area_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="-25dp"
+                        android:text="按地区"
+                        android:textColor="#00bdb1"
+                        android:textSize="40sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp" >
+
+                        <Button
+                            android:id="@+id/right_allarea_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/movie_hover"
+                            android:text="全部"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_china_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_allarea_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="内地"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_hongkong_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_china_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="香港"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_taiwan_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_hongkong_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="台湾"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_japan_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_taiwan_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="日本"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_korea_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_japan_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="韩国"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_america_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_korea_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="美国"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_india_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_america_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="印度"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_Thailand_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_india_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="泰国"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_europe_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_Thailand_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="欧洲"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/right_type_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="-25dp"
+                        android:text="按类型"
+                        android:textColor="#00bdb1"
+                        android:textSize="40sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp" >
+
+                        <Button
+                            android:id="@+id/right_alltype_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="全部"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_cinema_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_alltype_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="院线"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_action_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_cinema_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="动作"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_adventure_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_action_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="冒险"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_comedy_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_adventure_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="喜剧"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_love_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_comedy_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="爱情"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_war_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_love_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="战争"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_terror_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_war_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="恐怖"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_crime_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_terror_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="犯罪"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_suspense_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_crime_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="悬疑"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_panic_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_suspense_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="惊悚"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_emprise_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_panic_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="武侠"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_sciencefiction_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_emprise_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="科幻"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_music_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_sciencefiction_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="音乐"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_cartoon_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_below="@+id/right_cinema_Button"
+                            android:layout_marginTop="30dp"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="动画"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_strange_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/right_cartoon_Button"
+                            android:layout_alignBottom="@+id/right_cartoon_Button"
+                            android:layout_alignLeft="@+id/right_cinema_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="奇幻"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_story_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/right_strange_Button"
+                            android:layout_alignBottom="@+id/right_strange_Button"
+                            android:layout_alignLeft="@+id/right_adventure_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="剧情"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_ethic_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/right_story_Button"
+                            android:layout_alignBottom="@+id/right_story_Button"
+                            android:layout_alignLeft="@+id/right_comedy_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="伦理"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_record_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/right_ethic_Button"
+                            android:layout_alignBottom="@+id/right_ethic_Button"
+                            android:layout_toLeftOf="@+id/right_war_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="记录"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_history_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/right_record_Button"
+                            android:layout_alignBottom="@+id/right_record_Button"
+                            android:layout_alignLeft="@+id/right_war_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="历史"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_biography_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/right_history_Button"
+                            android:layout_alignBottom="@+id/right_history_Button"
+                            android:layout_toLeftOf="@+id/right_crime_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="传记"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_family_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignBaseline="@+id/right_strange_Button"
+                            android:layout_alignBottom="@+id/right_strange_Button"
+                            android:layout_toLeftOf="@+id/right_adventure_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="家庭"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_dance_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignTop="@+id/right_biography_Button"
+                            android:layout_toLeftOf="@+id/right_suspense_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="歌舞"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/right_year_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="-25dp"
+                        android:text="按年代"
+                        android:textColor="#00bdb1"
+                        android:textSize="40sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp" >
+
+                        <Button
+                            android:id="@+id/right_allyear_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="全部"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_0_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_allyear_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2015"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_1_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_0_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2014"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_2_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_1_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2013"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_3_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_2_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2012"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_4_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_3_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2011"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_5_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_4_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2010"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_6_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_5_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2009"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_7_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_6_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2008"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_8_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_7_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2007"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_9_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_8_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="2006"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+
+                        <Button
+                            android:id="@+id/right_10_Button"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/right_9_Button"
+                            android:background="@drawable/movie_hover"
+                            android:gravity="center"
+                            android:text="更早"
+                            android:textColor="#fff"
+                            android:textSize="25sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/right_sure_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout2"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/moviesearch_sure"
+                    android:text="" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

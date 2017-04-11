@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+    
+<include 
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    layout="@layout/title"
+    
+    
+    />
+    
+    
+    
+   <GridView 
+       
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:id="@+id/found_grid"
+          android:scrollbars="none"
+       android:numColumns="2"
+       ></GridView>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</LinearLayout>

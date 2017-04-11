@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">金庸小说全集</string> 	<!-- DownloadService.java 文件夹 DOWNLOAD_ACTION 字段需要更改  -->
+    <string name="cache_app_name">EBook_JY</string> <!-- 缓存路径,需随应用名改变而改变  -->
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

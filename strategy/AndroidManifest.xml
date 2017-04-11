@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bccv.strategy"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <!-- 网络访问权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- 服务自启 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="getui.permission.GetuiService.com.bccv.strategy" />
+    <!--  -->
+    <permission
+        android:name="getui.permission.GetuiService.com.bccv.strategy"
+        android:protectionLevel="normal" >
+    </permission>
+
+    <application
+        android:name="com.bccv.strategy.ApplicationManager"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" 
+        android:hardwareAccelerated="true">
+         <activity
+            android:name="com.bccv.strategy.ui.activity.SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> 
+        <activity
+            android:name="com.bccv.strategy.ui.activity.StrategyDetailsActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" 
+            android:launchMode="singleTask"/> 
+        <activity
+            android:name="com.bccv.strategy.ui.activity.GameListActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" 
+            android:launchMode="singleTask"/> 
+        <activity
+            android:name="com.bccv.strategy.ui.activity.StrategyListActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" 
+            android:launchMode="singleTask"/> 
+        <activity
+            android:name="com.bccv.strategy.ui.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.SearchActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.SettingActivity"
+            android:launchMode="singleTask" />
+        <activity android:name="com.bccv.strategy.ui.activity.ShareAppSearchActivity" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.ReportMsgActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.AboutUsActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.Reply2PersonActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name="com.bccv.strategy.ui.activity.LoginActivity" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.CommentListActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.ClassificationActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.Answer2PersonActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.PersonalActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.AppReleaseActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.AppDetailsActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.WebCommentActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.PersonalZoneActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.ScreenShotActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.bccv.strategy.ui.activity.MoreZanListActivity"
+            android:launchMode="singleTask" />
+
+        <!-- 裁剪 -->
+        <activity
+            android:name="com.bccv.strategy.utils.clipping.CropActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="bccv.bangyang.intent.action.CROP" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 裁剪 -->
+
+
+        <!-- SNS -->
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1104668984" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
+        <!-- SNS -->
+
+
+        <!-- download -->
+        <service
+            android:name="com.bccv.strategy.download.DownloadService"
+            android:process=":downloadservice" />
+
+        <meta-data
+            android:name="TA_APPKEY"
+            android:value="A6513KVMWHDM" />
+        <!-- 请将value改为app发布对应的渠道，不同的发布渠道使用不同的名字 < -->
+        <meta-data
+            android:name="InstallChannel"
+            android:value="play" />
+
+        <!-- push -->
+        <meta-data
+            android:name="PUSH_APPID"
+            android:value="DUbukLHQI28QtPKiIXMw34" /> <!-- APPID -->
+        <meta-data
+            android:name="PUSH_APPKEY"
+            android:value="c68hgcByJV504Wm8OIGBZ8" /> <!-- APPKEY -->
+        <meta-data
+            android:name="PUSH_APPSECRET"
+            android:value="QcXtDdzmIcAsFPCQ0iSH5A" /> <!-- APPSECRET -->
+        <meta-data
+            android:name="PUSH_GROUPID"
+            android:value="" />
+        <!-- SDK -->
+        <service
+            android:name="com.igexin.sdk.PushService"
+            android:exported="true"
+            android:label="NotificationCenter"
+            android:process=":pushservice" >
+        </service>
+
+        <receiver android:name="com.igexin.sdk.PushReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.igexin.sdk.action.refreshls" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.igexin.sdk.PushManagerReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.pushmanager" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.igexin.sdk.PushActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="com.igexin.sdk.PushActivityTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <!-- activity -->
+        <activity
+            android:name="com.igexin.getuiext.activity.GetuiExtActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:process=":pushservice"
+            android:taskAffinity="android.task.myServicetask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver
+            android:name="com.igexin.getuiext.service.PayloadReceiver"
+            android:exported="false" >
+            <intent-filter>
+
+                <!-- com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4 -->
+                <action android:name="com.igexin.sdk.action.7fjUl2Z3LH6xYy7NQK4ni4" />
+                <!-- android:name="com.igexin.sdk.action.appId" -->
+                <action android:name="com.igexin.sdk.action.APPID" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.igexin.getuiext.service.GetuiExtService"
+            android:process=":pushservice" />
+        <!-- download -->
+        <service
+            android:name="com.igexin.download.DownloadService"
+            android:process=":pushservice" />
+
+        <receiver android:name="com.igexin.download.DownloadReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.bccv.strategy.receiver.PushDemoReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.LADe1yHOPu81XUkmns2RI3" />
+            </intent-filter>
+        </receiver>
+        <!-- SDK -->
+
+        <provider
+            android:name="com.igexin.download.DownloadProvider"
+            android:authorities="downloads.com.bccv.strategy"
+            android:process=":pushservice" /> <!-- downloads. -->
+        <!-- =========================================================================== -->
+
+    </application>
+
+</manifest>

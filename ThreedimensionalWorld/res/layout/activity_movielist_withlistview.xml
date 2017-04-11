@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000" >
+
+        <LinearLayout
+            android:id="@+id/left_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical" >
+
+                    <com.bccv.threedimensionalworld.tool.HorizontalListView
+                        android:id="@+id/left_horizontalListView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                    </com.bccv.threedimensionalworld.tool.HorizontalListView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/left_status_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="未连接"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+
+                <DigitalClock
+                    android:id="@+id/left_digitalClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/left_status_textView"
+                    android:text="DigitalClock"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/right_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center" >
+
+                    <com.bccv.threedimensionalworld.tool.HorizontalListView
+                        android:id="@+id/right_horizontalListView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                    </com.bccv.threedimensionalworld.tool.HorizontalListView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/right_status_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="未连接"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+
+                <DigitalClock
+                    android:id="@+id/right_digitalClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/right_status_textView"
+                    android:text="DigitalClock"
+                    android:textColor="#fff"
+                    android:textSize="13sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

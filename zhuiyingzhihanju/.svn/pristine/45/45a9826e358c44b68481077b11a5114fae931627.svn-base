@@ -1,0 +1,468 @@
+package com.utils.net;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpHost;
+import org.apache.http.HttpMessage;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpVersion;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.ClientConnectionManager;
+import org.apache.http.conn.params.ConnManagerParams;
+import org.apache.http.conn.params.ConnRoutePNames;
+import org.apache.http.conn.scheme.PlainSocketFactory;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
+import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.CoreConnectionPNames;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+import org.apache.http.params.HttpProtocolParams;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+
+import com.utils.tools.ConstantValue;
+import com.utils.tools.Des3;
+import com.utils.tools.GlobalParams;
+import com.utils.tools.Logger;
+import com.utils.tools.StringUtils;
+
+/**
+ * 通用的连接工具（wap）
+ * 
+ * @author
+ * 
+ */
+@SuppressWarnings({ "deprecation", "unused" })
+public class HttpClientUtil {
+	private HttpGet get;
+	private static HttpPost post;
+
+	private static HttpResponse response;
+
+	private static HttpClient client;
+	private static Header[] headers = new Header[10];
+
+	public HttpClientUtil() {
+		client = getHttpClient();
+		client.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 20000);// 连接时间
+		client.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 20000);// 数据传输时间
+
+		// 判断是否读取到了ip信息（代理）
+		if (!StringUtils.isEmpty(GlobalParams.PROXY_IP)) {
+			// wap方式上网
+			HttpHost host = new HttpHost(GlobalParams.PROXY_IP, GlobalParams.PROXY_PORT);
+			client.getParams().setParameter(ConnRoutePNames.DEFAULT_PROXY, host);
+		}
+
+		// 设置头的数据
+		headers[0] = new BasicHeader("Appkey", "12343");
+		headers[1] = new BasicHeader("Udid", "");// 手机串号
+		headers[2] = new BasicHeader("Os", "android");//
+		headers[3] = new BasicHeader("Osversion", "");//
+		headers[4] = new BasicHeader("Appversion", "");// 1.0
+		headers[5] = new BasicHeader("Sourceid", "");//
+		headers[6] = new BasicHeader("Ver", "");
+
+		headers[7] = new BasicHeader("Userid", "");
+		headers[8] = new BasicHeader("Usersession", "");
+
+		headers[9] = new BasicHeader("Unique", "");
+	}
+
+	/**
+	 * 发送xml文件
+	 * 
+	 * @param xml
+	 * @return
+	 */
+	public InputStream sendXml(String uri, String xml) {
+		post = new HttpPost(uri);
+
+		try {
+			StringEntity entity = new StringEntity(xml, ConstantValue.CHARSET);
+			post.setEntity(entity);
+
+			response = client.execute(post);
+
+			if (response.getStatusLine().getStatusCode() == 200) {
+				return response.getEntity().getContent();
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	/**
+	 * 发送post请求
+	 * 
+	 * @param uri
+	 * @param params
+	 *            以Map形式传递参数
+	 * @return
+	 */
+	public static String sendPost(String uri, Map<String, String> params) {
+
+		post = new HttpPost(uri);
+
+		post.setHeaders(headers);
+		if (params != null && params.size() > 0) {
+
+			String paramString = "{";
+
+			List<BasicNameValuePair> parameters = new ArrayList<BasicNameValuePair>();
+			for (Map.Entry<String, String> item : params.entrySet()) {
+				paramString += "\"" + item.getKey() + "\":" + "\"" + item.getValue() + "\",";
+				// BasicNameValuePair pair = new
+				// BasicNameValuePair(item.getKey(),
+				// item.getValue());
+				// parameters.add(pair);
+			}
+			paramString = paramString.substring(0, paramString.length() - 2) + "\"}";
+			String encode = "";
+			try {
+				encode = Des3.encode(paramString);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			BasicNameValuePair pair = new BasicNameValuePair("secret", encode);
+			parameters.add(pair);
+
+			try {
+				HttpEntity entity = new UrlEncodedFormEntity(parameters, ConstantValue.CHARSET);
+				post.setEntity(entity);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		try {
+			response = client.execute(post);
+			// 判断是否成功处理
+			if (response.getStatusLine().getStatusCode() == 200) {
+				// EntityUtils//把服务器端给你的信息变成字符串
+				return EntityUtils.toString(response.getEntity(), ConstantValue.CHARSET);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		// Toast.makeText(GlobalParams.context, "网络错误", 1).show();
+
+		return null;
+	}
+
+	/**
+	 * 发送post请求(未加密)
+	 * 
+	 * @param uri
+	 * @param params
+	 *            以Map形式传递参数
+	 * @return
+	 */
+	public static String sendPostNoSecret(String uri, Map<String, String> params) {
+
+		post = new HttpPost(uri);
+
+		post.setHeaders(headers);
+		if (params != null && params.size() > 0) {
+			List<BasicNameValuePair> parameters = new ArrayList<BasicNameValuePair>();
+			for (Map.Entry<String, String> item : params.entrySet()) {
+				BasicNameValuePair pair = new BasicNameValuePair(item.getKey(), item.getValue());
+				parameters.add(pair);
+			}
+			try {
+				HttpEntity entity = new UrlEncodedFormEntity(parameters, ConstantValue.CHARSET);
+				post.setEntity(entity);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		try {
+
+			response = client.execute(post);
+			// 判断是否成功处理
+			if (response.getStatusLine().getStatusCode() == 200) {
+				// EntityUtils//把服务器端给你的信息变成字符串
+				return EntityUtils.toString(response.getEntity(), ConstantValue.CHARSET);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	/**
+	 * 发送Get请求
+	 * 
+	 * @param uri
+	 *            请求的uri地址
+	 * @param params
+	 *            Map参数集合
+	 * @return
+	 */
+	public String sendGet(String uri, Map<String, String> params) {
+
+		HttpClient client = getHttpClient();
+		client.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 20000);// 连接时间
+		client.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 20000);// 数据传输时间
+		StringBuilder sb = new StringBuilder();
+		sb.append(uri);
+
+		// 设置参数
+		if (params != null && params.size() > 0) {
+			sb.append("&");
+			for (Map.Entry<String, String> item : params.entrySet()) {
+				sb.append(item.getKey() + "=" + item.getValue() + "&");
+			}
+
+			sb.deleteCharAt(sb.length() - 1);
+		}
+
+		get = new HttpGet(sb.toString());
+		Logger.e("url", sb.toString());
+		try {
+			response = client.execute(get);
+			if (response.getStatusLine().getStatusCode() == 200) {
+
+				return EntityUtils.toString(response.getEntity(), "utf-8");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	/**
+	 * 发送Get请求
+	 * 
+	 * @param uri
+	 *            请求的uri地址
+	 * @param params
+	 *            Map参数集合
+	 * @return
+	 */
+	public String sendGetWithHeader(String uri, Map<String, String> params, List<Header> headers) {
+
+		HttpClient client = getHttpClient();
+		client.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 20000);// 连接时间
+		client.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 20000);// 数据传输时间
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(uri);
+
+		// 设置参数
+		if (params != null && params.size() > 0) {
+			sb.append("&");
+			for (Map.Entry<String, String> item : params.entrySet()) {
+				sb.append(item.getKey() + "=" + item.getValue() + "&");
+			}
+
+			sb.deleteCharAt(sb.length() - 1);
+		}
+
+		get = new HttpGet(sb.toString());
+		for (int i = 0; i < headers.size(); i++) {
+			get.setHeader(headers.get(i));
+		}
+		
+
+		try {
+			response = client.execute(get);
+			if (response.getStatusLine().getStatusCode() == 200) {
+
+				return EntityUtils.toString(response.getEntity(), "utf-8");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+	
+	public String getResponseFromUrlS(String url) {// HttpResponse
+		HttpClient client = new DefaultHttpClient();
+
+		Header[] headers = new Header[12];
+		headers[0] = new BasicHeader("Appkey", "12343");
+		headers[1] = new BasicHeader("Udid", "");// 手机串号
+		headers[2] = new BasicHeader("Os", "ios");//
+		headers[3] = new BasicHeader("Osversion", "");//
+		headers[4] = new BasicHeader("Appversion", "");// 1.0
+		headers[5] = new BasicHeader("Sourceid", "");//
+		headers[6] = new BasicHeader("Ver", "");
+
+		headers[7] = new BasicHeader("Userid", "");
+		headers[8] = new BasicHeader("Usersession", "");
+
+		headers[9] = new BasicHeader("Unique", "");
+
+		headers[10] = new BasicHeader("user-agent",
+				"Mozilla/5.0 (iPhone; CPU iPhone OS 7_1 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D5145e Safari/9537.53");
+		headers[11] = new BasicHeader("cookie", "FTN5K=000eec0c");
+		get = new HttpGet(url);
+		get.setHeaders(headers);
+		try {
+			response = client.execute(get);
+			if (response.getStatusLine().getStatusCode() == 200) {
+				// return response;
+				return EntityUtils.toString(response.getEntity(), "utf-8");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	public HttpResponse getResponseFromUrl(String url) {// HttpResponse
+		HttpClient client = new DefaultHttpClient();
+
+		Header[] headers = new Header[12];
+		headers[0] = new BasicHeader("Appkey", "12343");
+		headers[1] = new BasicHeader("Udid", "");// 手机串号
+		headers[2] = new BasicHeader("Os", "ios");//
+		headers[3] = new BasicHeader("Osversion", "");//
+		headers[4] = new BasicHeader("Appversion", "");// 1.0
+		headers[5] = new BasicHeader("Sourceid", "");//
+		headers[6] = new BasicHeader("Ver", "");
+
+		headers[7] = new BasicHeader("Userid", "");
+		headers[8] = new BasicHeader("Usersession", "");
+
+		headers[9] = new BasicHeader("Unique", "");
+
+		headers[10] = new BasicHeader("user-agent",
+				"Mozilla/5.0 (iPhone; CPU iPhone OS 7_1 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Version/7.0 Mobile/11D5145e Safari/9537.53");
+		headers[11] = new BasicHeader("cookie", "FTN5K=000eec0c");
+		get = new HttpGet(url);
+		get.setHeaders(headers);
+		try {
+			response = client.execute(get);
+			if (response.getStatusLine().getStatusCode() == 200) {
+				return response;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	public HttpClient getHttpClient() {
+		HttpClient httpClient = null;
+		if (null == httpClient) {
+			// 初始化工作
+			try {
+				KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
+				trustStore.load(null, null);
+				SSLSocketFactory sf = new SSLSocketFactoryEx(trustStore);
+				sf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER); // 允许所有主机的验证
+
+				HttpParams params = new BasicHttpParams();
+
+				HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
+				HttpProtocolParams.setContentCharset(params, HTTP.DEFAULT_CONTENT_CHARSET);
+				HttpProtocolParams.setUseExpectContinue(params, true);
+
+				// 设置连接管理器的超时
+				ConnManagerParams.setTimeout(params, 10000);
+				// 设置连接超时
+				HttpConnectionParams.setConnectionTimeout(params, 10000);
+				// 设置socket超时
+				HttpConnectionParams.setSoTimeout(params, 10000);
+
+				// 设置http https支持
+				SchemeRegistry schReg = new SchemeRegistry();
+				schReg.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
+				schReg.register(new Scheme("https", sf, 443));
+
+				ClientConnectionManager conManager = new ThreadSafeClientConnManager(params, schReg);
+
+				httpClient = new DefaultHttpClient(conManager, params);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return new DefaultHttpClient();
+			}
+		}
+		return httpClient;
+	}
+
+}
+
+class SSLSocketFactoryEx extends SSLSocketFactory {
+
+	SSLContext sslContext = SSLContext.getInstance("TLS");
+
+	public SSLSocketFactoryEx(KeyStore truststore)
+			throws NoSuchAlgorithmException, KeyManagementException, KeyStoreException, UnrecoverableKeyException {
+		super(truststore);
+
+		TrustManager tm = new X509TrustManager() {
+
+			@Override
+			public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+				return null;
+			}
+
+			@Override
+			public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType)
+					throws java.security.cert.CertificateException {
+
+			}
+
+			@Override
+			public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType)
+					throws java.security.cert.CertificateException {
+
+			}
+		};
+
+		sslContext.init(null, new TrustManager[] { tm }, null);
+	}
+
+	@Override
+	public Socket createSocket(Socket socket, String host, int port, boolean autoClose)
+			throws IOException, UnknownHostException {
+		return sslContext.getSocketFactory().createSocket(socket, host, port, autoClose);
+	}
+
+	@Override
+	public Socket createSocket() throws IOException {
+		return sslContext.getSocketFactory().createSocket();
+	}
+
+}

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.utils.views.DragLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dl"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="30dp"
+        android:paddingLeft="30dp" >
+
+        <RelativeLayout
+            android:id="@+id/ll1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.utils.views.CircleImageView
+                android:id="@+id/iv_bottom"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/icon" />
+
+            <TextView
+                android:id="@+id/main_iconName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_bottom"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="BlueMor"
+                android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/main_NoRegit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_bottom"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/main_loginBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/logbtn_select"
+                    android:text="登录"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/main_regBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/regibtn_select"
+                    android:text="注册 "
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view1"
+            style="@style/view"
+            android:layout_width="150dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/ll1"
+            android:layout_marginTop="15dp" />
+
+        <LinearLayout
+            android:id="@+id/main_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view1"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:layout_gravity="center_vertical"
+                
+                android:src="@drawable/index" />
+
+            <TextView
+                android:id="@+id/tv_mail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                 android:layout_gravity="center_vertical"
+                android:text="首页"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view6"
+            style="@style/view"
+            android:layout_width="150dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/main_open"
+            android:layout_marginTop="15dp" />
+
+        <LinearLayout
+            android:id="@+id/main_gameFenlei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view6"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_gravity="center_vertical"
+                android:src="@drawable/my_fenlei" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                 android:layout_gravity="center_vertical"
+                android:text="游戏分类 "
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view2"
+            style="@style/view"
+            android:layout_width="150dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/main_gameFenlei"
+            android:layout_marginTop="15dp" />
+
+        <View
+            android:id="@+id/view3"
+            style="@style/view"
+            android:layout_width="150dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/view2"
+            android:layout_marginTop="40dp" />
+
+        <LinearLayout
+            android:id="@+id/main_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view3"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/my_download" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="我的下载" android:layout_gravity="center_vertical"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view4"
+            style="@style/view"
+            android:layout_width="150dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/main_download"
+            android:layout_marginTop="15dp" />
+
+        <LinearLayout
+            android:id="@+id/main_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view4"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:layout_gravity="center_vertical"
+                android:src="@drawable/my_comment" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="我的评论" android:layout_gravity="center_vertical"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view5"
+            style="@style/view"
+            android:layout_width="150dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/main_comment"
+            android:layout_marginTop="15dp" />
+
+        <LinearLayout
+            android:id="@+id/main_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view5"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+               android:layout_gravity="center_vertical"
+                android:src="@drawable/my_yaokong" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                 android:layout_gravity="center_vertical"
+                android:text="遥控器"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view8"
+            style="@style/view"
+            android:layout_width="150dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/main_control"
+            android:layout_marginTop="15dp" />
+
+        <LinearLayout
+            android:id="@+id/main_signOUt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:layout_gravity="center_vertical"
+                android:src="@drawable/sign_out" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="注销登录"
+                 android:layout_gravity="center_vertical"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view7"
+            style="@style/view"
+            android:layout_width="150dp"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/main_signOUt"
+            android:layout_marginTop="15dp" />
+    </RelativeLayout>
+
+    <com.utils.views.MyRelativeLayout
+        android:layout_width="match_parent"
+       
+        android:layout_height="match_parent"
+        android:background="@drawable/bg" >
+
+        <RelativeLayout
+            android:id="@+id/layout_top"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/main_right_re"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true" >
+
+                <Button
+                    android:id="@+id/btn_Right_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/code" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/main_left_re"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true" >
+
+                <Button
+                    android:id="@+id/btn_open_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/menu" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/title_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/main_right_re"
+                android:layout_toRightOf="@id/main_left_re"
+                android:background="@drawable/search_bg"
+                android:drawableLeft="@drawable/search_s"
+                android:gravity="center"
+                android:paddingLeft="40dp"
+                android:text="大家都在搜：极品飞车                 "
+                android:textColor="#fff"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <com.utils.pulltorefresh.PullToRefreshListView
+            android:id="@+id/main_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/layout_top"
+            android:scrollbars="none" >
+        </com.utils.pulltorefresh.PullToRefreshListView>
+    </com.utils.views.MyRelativeLayout>
+
+</com.utils.views.DragLayout>
